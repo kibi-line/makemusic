@@ -1,0 +1,2622 @@
+<!DOCTYPE html>
+<html>
+<head>
+            <style>.lw { font-size: 60px; }</style>
+        </head>
+        <body>
+            
+
+
+    <meta charset="UTF-8">
+    <title>作曲アプリ</title>
+
+
+<style>
+        textarea {
+            width: 100%;
+            height: 100px;
+            background: #fffaf0;
+            border-bottom: solid 3px #e8e6e1;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+            border-radius: 9px;
+            border-top: solid 2px #1dc1d6;
+          
+        }
+        .button {
+            margin-top: 10px;
+            font-size:17px;
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 10em;
+          　height:20em;
+          　text-align: center;
+            box-shadow: -5px 5px 0px #1567C3;
+            transition: .3s;
+        }
+  
+        .button:hover{
+          background-position: right center;
+          background-size: 300% auto;
+          -webkit-animation: pulse 1s infinite;
+          animation: ripple 0.75s infinite;
+          color: #ffffff;
+          box-shadow: unset;
+          transform: translate(-4px,4px);
+          letter-spacing: 0.20em;
+          text-indent: 0.20em;
+        }
+  
+        @keyframes ripple {
+          0% {box-shadow: 0 0 0 0 #1B85FB;}
+          70% {box-shadow: 0 0 0 10px rgb(27 133 251 / 0%);}
+          100% {box-shadow: 0 0 0 0 rgb(27 133 251 / 0%);}
+        }
+  
+  
+  header{
+            height: 200px;
+            width: 90%;
+            background-image: repeating-linear-gradient(115deg, rgba(255, 0, 0, 1), rgba(250, 159, 21, 1) 15%, rgba(169, 255, 34, 1) 32%, rgba(93, 192, 93, 1) 46%, rgba(100, 174, 180, 1) 60%, rgba(39, 73, 238, 1) 73%, rgba(157, 37, 243, 1) 86%, rgba(255, 0, 0, 1));
+            background-size: 800% 800%;
+            animation: GradietionAnimation 10s ease infinite;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-radius: 15px;
+            max-width: 952px;
+            margin: 0 auto;
+            padding: 12px 24px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 120px;
+            weigh:100%;
+            font-weight: bold;
+            font-size: 75px;
+            font-feature-settings: "palt";
+            box-shadow:none;
+        }
+  
+  .animate {
+            height: 200px;
+            width: 90%;
+            background-image: repeating-linear-gradient(115deg, rgba(255, 0, 0, 1), rgba(250, 159, 21, 1) 15%, rgba(169, 255, 34, 1) 32%, rgba(93, 192, 93, 1) 46%, rgba(100, 174, 180, 1) 60%, rgba(39, 73, 238, 1) 73%, rgba(157, 37, 243, 1) 86%, rgba(255, 0, 0, 0));
+            background-size: 800% 800%;
+            animation: GradietionAnimation 10s ease infinite;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            border-radius: 15px;
+            max-width: 952px;
+            margin: 0 auto;
+            padding: 12px 24px 0;
+            display: flex;
+            align-items: center;
+            font-feature-settings: "palt";
+            height: 120px;
+            weigh:100%;
+            font-weight: bold;
+            font-size: 75px;
+      box-shadow:none;
+        }
+  
+          @keyframes GradietionAnimation { 
+          0%{background-position:0% 50%}
+          50%{background-position:100% 50%}
+          100%{background-position:0% 50%}
+        }
+  
+        h1 {
+            font-size: 75px;
+            -webkit-text-stroke: 2px #adff2f;
+            text-stroke: 2px #adff2f;
+            font-feature-settings: "palt";
+            text-align: center;
+            align-items: center;
+            weigh:100%;
+          box-shadow:none;
+            height:100%;
+  }
+  
+        .image{
+            color: #d3d3d3;
+  }
+  
+        select{
+            background-color: #fff8dc;/*背景色*/
+            border-top: solid 4px #1dc1d6;
+            box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);/*影*/
+            font-size: 15px;
+  }
+  
+        label{
+            font-size: 18px;
+  }
+  
+       .input{
+            font-weight: normal;
+            font-size:18px;
+  }
+  
+       .aa{
+          color:#0645ad;
+         vertical-align: middle;
+          box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);/*影*/
+         height:200%;
+  }
+  
+       .aaa{
+          line-height:1.5;
+          font-size:15px;
+  }
+  
+       .imagin{
+         font-size;23px;
+  }
+  
+       .hahaha{
+         font-size;20px;
+  }
+  
+        .number{
+          font-size:15px;
+          line-height:1.5;
+        }
+  
+        .tempo-image{
+          font-size:15px;
+          line-height:1.5;
+        }
+  
+        .Metronom{
+          color:#1d3994;
+          font-size:21px;
+        }
+  
+        .important{
+          color:#ff0000;
+          font-weight: bold;
+        }
+  
+        .sound{
+          font-size:15px;
+          line-height:10px;
+          line-height:1.5;
+        }
+  
+        .scale{
+          font-size:15px;
+          line-height:10px;
+         line-height:1.5;
+        }
+  
+        .fonts{
+          font-size:15px;
+          line-height:10px;
+        }
+  
+        .Alert{
+          color: #ff0000;
+          line-height:1.5;
+        }
+  
+        body{
+          line-height:2.0;
+          background-color:#fff;
+          font-family: sans-serif;
+
+  }
+  
+          .container {
+          width: 100%;
+          height: 100px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          box-shadow:none;
+      }
+  
+      .animate {
+        font-size: 50px;
+        font-family:sans-serif;
+        text-align: left;
+        white-space: nowrap;
+      }
+  
+      .animate span {
+        box-shadow:none;
+        display: inline-block;
+      }
+
+      .animate span:nth-of-type(2) {
+        animation-delay: .05s;
+      }
+      .animate span:nth-of-type(3) {
+        animation-delay: .1s;
+      }
+      .animate span:nth-of-type(4) {
+        animation-delay: .15s;
+      }
+      .animate span:nth-of-type(5) {
+        animation-delay: .2s;
+      }
+      .animate span:nth-of-type(6) {
+        animation-delay: .25s;
+      }
+      .animate span:nth-of-type(7) {
+        animation-delay: .3s;
+      }
+      .animate span:nth-of-type(8) {
+        animation-delay: .35s;
+      }
+      .animate span:nth-of-type(9) {
+        animation-delay: .4s;
+      }
+      .animate span:nth-of-type(10) {
+        animation-delay: .45s;
+      }
+      .animate span:nth-of-type(11) {
+        animation-delay: .5s;
+      }
+      .animate span:nth-of-type(12) {
+        animation-delay: .55s;
+      }
+
+      .top-wrapper-txt span {
+        opacity: 0;
+        transform: translate(-150px, 0) scale(.3);
+        animation: leftRight .5s forwards;
+      }
+
+
+      @keyframes leftRight {
+        40% {
+          transform: translate(50px, 0) scale(.8);
+          opacity: 1;
+          color: #fff;
+        }
+
+        60% {
+          color: #fff;
+        }
+
+        80% {
+          transform: translate(0) scale(3);
+          opacity: 0;
+        }
+
+        100% {
+          transform: translate(0) scale(1);
+          opacity: 1;
+        }
+  }
+  
+        .accordion details {
+        border: 1px solid #ddd;
+        margin-bottom: 5px;
+        vertical-align: middle;
+      }
+
+      .accordion summary {
+        padding: 10px;
+        background-color: #e9f5f4;
+        cursor: pointer;
+        height: 20px;
+        vertical-align: middle;
+      }
+
+      .accordion .sound {
+        vertical-align: middle;
+        padding: 10px;
+        }
+  
+      .let{
+        font-size:15px;
+        }
+  
+       .now{
+         color:#ff0000;
+         font-weight: bold;
+         font-size: 25px;
+  }
+       .word{
+         font-style: italic;
+  }
+  .sine{
+    background-color:#faeb89;
+  }
+  .choose{
+    background-color:#fff;
+  }
+  .Oh{
+    color:#dc143c;
+    font-weight: bold;
+  }
+  .aa:hover{
+    background-color:#fcc96a;
+  }
+
+  .textarea:hover{
+    background-color:#faeb89;
+  }
+  
+  .make{
+    color:#6495ed
+  }
+  
+  .likeButton {
+ color: #888;
+ font-size: 1em;
+ background-color: transparent;
+ border: 0.1em solid;
+ border-radius: 1em;
+ padding: 0.333em 1em 0.25em;
+ line-height: 1.2em;
+ box-shadow: 0 0.25em 1em -0.25em;
+ cursor: pointer;
+ transition: color 150ms ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
+ outline: 0;
+ }
+  
+  .likeButton {
+ color: #888;
+ font-size: 1em;
+ background-color: transparent;
+ border: 0.1em solid;
+ border-radius: 1em;
+ padding: 0.333em 1em 0.25em;
+ line-height: 1.2em;
+ box-shadow: 0 0.25em 1em -0.25em;
+ cursor: pointer;
+ transition: color 150ms ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
+ outline: 0;
+ }
+ 
+ .likeButton:hover {
+ color: #e5348c;
+ }
+  
+ .likeButton.liked {
+ color: #ffffff;
+ background-color: #e5348c;
+ border-color: #e5348c;
+ }
+  
+  .chose:hover{
+    background-color:#f5deb3;
+  }
+  
+  .danger{
+    color:#ff0000;
+    font-weight: bold;
+  }
+  
+  .class{
+    color:#ff0000;
+    font-weight: bold;
+  }
+  
+  .textarea:focus {
+background-color: #faeb89;
+}
+  
+
+  
+  	.keep{
+      width: 300px;
+      height: 300px;
+      position:fixed;
+      bottom:0px;
+      right:-170px;
+      bottom:-170px;
+      font-size:40px;
+  }
+  .aaaa{
+    border-radius: 50%;
+    font-size:16px;
+    position:fixed;
+  }
+  
+    .radius_test {
+    width: 120px;               /* 幅指定 */
+    height: 120px;              /* 高さ指定 */
+    border-radius: 60px;        /* 角丸指定 */
+      background-image: linear-gradient(90deg, rgba(0, 186, 235, 1), rgba(3, 213, 25, 1));
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position:fixed;
+}
+  
+  .aaaa{
+    color:#fff;
+    text-decoration: none;
+    font-weight:bold;
+    text-align: center;
+    position:fixed;
+  }
+  
+  .radius_test:hover {
+      background-image: linear-gradient(90deg, rgba(101, 223, 255, 1), rgba(120, 237, 132, 1));
+  }
+  
+  ul.gnav_wrapper{
+background: #000;
+padding: 0;
+text-align: center;
+height:50px;
+}
+  
+ul.gnav_wrapper li{
+display: inline-block;
+}
+
+
+ul.gnav_wrapper li a{
+display: block;
+padding: 1em;
+color: #fff;
+text-decoration: none;
+}
+  
+ul.gnav_wrapper a::first-line{
+font-size: 16px;
+font-weight: bold;
+}
+  
+  ul.gnav_wrapper li:hover{
+background: #FF7F50;
+}
+  
+
+
+/* 以下は前回までの内容 */
+header {
+  display: flex;
+  background: #fff;
+  height: 60px;
+}
+  
+.main-menu {
+  margin: 0 auto;
+  display: flex;
+  width: 1280px;
+}
+  
+.logo {
+  text-align: center;
+  padding: 18px;
+  font-size: 24px;
+  width: 200px;
+  background: #dddddd;
+}
+  
+.pc-menu {
+  width: 100%;
+}
+  
+.pc-menu > ul {
+  display: flex;
+  list-style: none;
+}
+  
+.pc-menu > ul > li {
+  text-align: center;
+  font-size: 16px;
+  width: 25%;
+}
+  
+.pc-menu > ul > li > a {
+  display: block;
+  text-decoration: none;
+  color: #000000;
+  line-height: 60px;
+}
+  
+.pc-menu > ul > li > a:hover {
+  background: #cccccc;
+}
+  
+.sp-menu__box {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  border-radius:6px;
+  height: 60px;
+  width: 60px;
+  justify-content: center;
+  align-items: center;
+  z-index: 90;
+  background: #3584bb;
+  top: 5px;
+  right: 5px;
+}
+  
+.sp-menu__box span,
+.sp-menu__box span:before,
+.sp-menu__box span:after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 25px;
+  border-radius: 3px;
+  background: #ffffff;
+  position: absolute;
+}
+  
+.sp-menu__box span:before {
+  bottom: 8px;
+}
+  
+.sp-menu__box span:after {
+  top: 8px;
+}
+  
+#sp-menu__check {
+  display: none;
+}
+  
+#sp-menu__check:checked ~ .sp-menu__box span {
+  background: rgba(255, 255, 255, 0);
+}
+  
+#sp-menu__check:checked ~ .sp-menu__box span::before {
+  bottom: 0;
+  transform: rotate(45deg);
+}
+  
+#sp-menu__check:checked ~ .sp-menu__box span::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+  
+#sp-menu__check:checked ~ .sp-menu__content {
+  left: 0;
+}
+  
+.sp-menu__content {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  z-index: 80;
+  background-color: #3584bb;
+  transition: all 0.5s;
+}
+  
+.sp-menu__list {
+  padding: 70px 10px 0;
+}
+  
+.sp-menu__item {
+  border-bottom: solid 1px #ffffff;
+  list-style: none;
+}
+  
+.sp-menu__link {
+  display: block;
+  width: 100%;
+  font-size: 15px;
+  box-sizing: border-box;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 9px 15px 10px 0;
+}
+  
+  .menu{
+    box-shadow:none;
+  }
+  
+  .wk{
+    font-size:1px;
+  }
+  
+  footer{
+    background-color: #000;
+    color:#fff;
+  }
+  
+  .footer{
+    color:#fff;
+    font-size:12px;
+  }
+  
+  .footer {
+    padding: 1rem;
+    font-size: 15px;
+    color: #fff;
+    background: #1d1e22;
+    height:30px;
+    align-items:center;
+}
+
+
+@media (min-width: 768px) {
+  .md-flex {
+    display: flex;
+  }
+
+  .md-justify-between {
+    justify-content: space-between;
+  }
+
+  .copyright {
+    text-align: center;
+    
+  }
+
+
+  
+</style>
+
+ <br class="wk"> 
+<header>
+  <div class="container">
+  <div class="animate top-wrapper-txt">
+    <div class="manu">
+    <span>作</span><span>曲</span><span>ア</span><span>プ</span><span>リ</span>
+    </div>
+    </div>
+    </div>
+</header>
+  
+      <div class="sp-menu">
+      <input type="checkbox" id="sp-menu__check">
+      <label for="sp-menu__check" class="sp-menu__box">
+        <span></span>
+      </label>
+      <div class="sp-menu__content">
+        <ul class="sp-menu__list">
+          <li class="sp-menu__item">
+            <a class="sp-menu__link" href="https://youtu.be/jKhD3g9D3Bk" target="_blank">作曲の手順</a>
+          </li>
+          <li class="sp-menu__item">
+            <a class="sp-menu__link" href="https://docs.google.com/forms/d/e/1FAIpQLSe1FZ7Kd0bZZ0pZmNHzV0yLofpYyOT83_mKtSChHgpXiia3ow/viewform?usp=drive_link" target="_blank">批評する</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+  <br>
+  
+    <div class="top-ttl">
+<div class="textanimation">このアプリは、英語の文字列を曲に変換するアプリです。</div>
+    </div>
+
+<h5 class="let">手順は簡単です。始めましょう。</h5>
+    
+  <label for="waveform">①音色を選択してください</label>
+    <select id="waveform" class="chose">
+        <option value="sine" class="choose">選択してください</option>
+        <option value="sine">サイン波</option>
+        <option value="square">矩形波</option>
+        <option value="sawtooth">のこぎり波</option>
+        <option value="triangle">三角波</option>
+    </select>
+    
+    <div class="accordion">
+  <details name="test" class="shine">
+<summary class="aa">詳細情報<span class="Oh">　(ここをクリック)</span></summary>
+    <div class="sound">
+      <h3 class="imagin">音についての説明</h3>
+      <p>サイン波は明瞭な音です。透明感があります。</p>
+      <p>短形波は鋭い音です</p>
+      <p class="Alert">※短形波は音が大きいです。</p>
+      <p>のこぎり波は明るい音です</p>
+      <p class="Alert">※のこぎり波は音が大きいです。</p>
+      <p>三角波はまろやかで優しい音です。</p>
+       <br>
+      <p>音のイメージは人によって異なります。まあ色々試してみてください。</p>
+         </div>
+</details>
+  
+<br>
+  
+  <label for="scaleType">②音階の種類を選択してください</label>
+<select id="scaleType" class="chose">
+    <option value="normal" class="choose">選択してください</option>
+    <option value="normal" class="sine">長音階 (スタンダード)</option>
+    <option value="yonanuki">ヨナ抜き音階</option>
+    <option value="ryukyu">琉球音階</option> 
+    <option value="zenon">全音階</option>
+    <option value="yonuki">四抜き音階</option>
+    <option value="roku">四六抜き音階</option>
+    <option value="minyo">民謡音階</option>
+    <option value="ritu">律音階</option>
+  
+</select>
+
+          <div class="accordion">
+ <details name="test">
+
+<summary class="aa">詳細情報<span class="Oh">　(ここをクリック)</span></summary>
+        <div class="sound">
+   <div class="scale">
+
+     <h3>音階についての説明</h3>
+     <p>　長音階は明るい音階です。よく聞くと思います。</p>
+     <p>　ヨナ抜き音階は日本風の音階です</p>
+     <p>　琉球音階は沖縄風の音階です</p>
+     <p>　全音階は「宇宙」「ふわふわ感」が特徴です</p>
+     <p>　四抜き音階はヨナ抜き音階に少し彩りがましいています</p>
+     <p>　四六抜き音階はとてもきっぱりと明るいです</p>
+     <p>　民謡音階はわらべ唄などの日本民謡でよく使われています</p>
+     <p>　律音階は「君が代」のイメージです。</p>
+     </div>
+   <br>
+ <p class="class">・音程を決めても曲の雰囲気に大きな影響がない場合もあります。ご了承ください。</p>
+<p>・全音階は10文字までです。まあ色々試してみてください。</p>
+     </div>
+</details>  
+  
+ <br> 
+  
+  <label for="key">③キーを選択してください</label>
+<select id="key" class="chose">
+  <option value="261.63" class="choose">選択してください</option>
+    <option value="195.998">G3</option>
+    <option value="207.652">G#3/A♭3</option>
+    <option value="220.000">A3</option>
+    <option value="233.082">A#3/B♭3</option>
+    <option value="246.942">B3</option>
+    <option value="261.626" class="sine">C4 (スタンダード)</option>
+    <option value="277.183">C#4/D♭4</option>
+    <option value="293.665">D4</option>
+    <option value="311.127">D#4/E♭4</option>
+    <option value="329.628">E4</option>
+    <option value="349.228">F4</option>
+    <option value="369.994">F#4/G♭4</option>
+    <option value="391.995">G4</option>
+    <option value="415.305">G#4/A♭4</option>
+    <option value="440.000">A4</option>
+    <option value="466.164">A#4/B♭4</option>
+    <option value="493.883">B4 </option>
+    <option value="523.251">C5 </option>
+</select>
+            
+                <div class="accordion">
+  <details name="test">
+<summary class="aa">詳細情報<span class="Oh">　(ここをクリック)</span></summary>
+          <div class="sound">
+    <div class="aaa">
+    <h3 class="imagin">キーのアルファベットの説明</h3>
+      
+    <p>　Cは明るく開放的なイメージ。一般的なキー</p>
+    <p>　C#/D♭は欄熱した退廃的なイメージ</p>
+    <p>　Dは神を連想させるイメージ</p>
+    <p>　D#,E♭は英雄のイメージ</p>
+    <p>　Eはのどかなイメージ</p>
+    <p>　FはCの次に明るいイメージ</p>
+    <p>　F#/G♭はきらびやかなイメージ</p>
+    <p>　Gは明るくて快活なイメージ</p>
+    <p>　G#/A♭は大人っぽい高貴なイメージ</p>
+    <p>　Aはきらびやかで澄み切ったイメージ</p>
+    <p>　A#/B♭は明るく軽やかなイメージ</p>
+    <p>　Bは重々しく儀式的なイメージ</p>
+      </div>
+    <br>
+    <div class="number">
+
+      <h3 class="imagin">キーの数字の説明</h3>
+      <p>　数字が小さいほど低いです。C4が真ん中のドです。</p><p>
+      </p></div>
+        <p class="danger">G3は音が鳴らない場合があります。</p>
+            
+    <br>
+<p class="hahaha">まあ色々試してみてください。</p>
+</div></details>
+  </div>
+<br>
+  
+  <label for="tempo">④テンポを選択してください。</label>
+<select id="tempo" class="chose">
+  <option value="100" class="choose">選択してください</option>
+    <option value="60">40</option>
+    <option value="70">50</option>
+    <option value="60">60</option>
+    <option value="70">70</option>
+    <option value="80">80</option>
+    <option value="90">90</option>
+    <option value="100" class="sine">100 (スタンダード)</option>
+    <option value="110">110</option>
+    <option value="120">120</option>
+    <option value="130">130</option>
+    <option value="140">140</option>
+  <option value="150">150</option>
+   <option value="200">200</option>
+    <option value="300">300</option>
+  <option value="400">400</option>
+  <option value="1000">1000</option>
+  <option value="2000">2000</option>
+</select>
+
+          <div class="accordion">
+  <details name="test">
+<summary class="aa">詳細情報<span class="Oh">　(ここをクリック)</span></summary>
+      <div class="sound">
+    <div class="tempo-image">
+      <h3 class="imagin">テンポの説明</h3>
+        <p>　40,50は重々しく</p>
+        <p>　60,70はゆるやかなテンポ</p>
+        <p>　80は歩くような速さ</p><p>
+        </p><p>　90,100は中くらいの速さ</p>
+        <p>　110,120はやや速く</p>
+        <p>　130は速く</p>
+        <p>　140は快活に速く</p>
+      <p>　150は極めて速く</p>
+      <p>　200は死ぬほど速く</p>
+       <p>　300は気がおかしいほど速く</p>
+      <p>　400は表現ができほど速く</p>
+      <p>　1000は……速く</p>
+      <p>　2000は…………………速く</p>
+
+        </div>
+    <p>イメージがつきにくい場合は<a class="Metronom" href="https://www.musicca.com/jp/metronome" target="_blank" rel="noopener noreferrer">メトロノーム</a>を鳴らしてみてください!!</p>
+    
+          <br>
+<p>まあ色々試してみてください。</p>
+        </div>
+</details>
+
+<br>
+      
+<label for="inputTect" class="input">⑤1〜13文字半角アルファベット列を入力してください</label>
+            
+              <details name="test">
+<summary class="aa">詳細情報<span class="Oh">　(ここをクリック)</span></summary>
+    <div class="fonts">
+      <div class="sound">
+      <h3 class="imagin">入力についての説明</h3>
+<p>・13文字以内でお願いします。14文字以上になると作曲できません。</p>
+<p>・アルファベットの大文字と小文字の区別はありません。</p>
+<p>・<span class="important">半角入力</span>でお願いします。</p>
+            <p>アルファベット列が思いつかない場合は<a href="https://sites.google.com/gse.okayama-c.ed.jp/make-words/%E3%83%9B%E3%83%BC%E3%83%A0" target="_blank" rel="noopener noreferrer" class="make">文字列自動生成</a>をしてみてください!!</p>
+        </div>
+      </div>
+</details>
+            
+<textarea id="inputText" maxlength="13" rows="4" cols="50" class="textarea"></textarea>
+<p class="word">現在の文字数: <span id="charCount" class="now">0</span>/13</p>
+            
+            <br>
+   <label>⑥ボタンを押しましょう。</label>
+            <br>
+<button onclick="checkInput()" class="button">音楽を生成する</button><br>
+          
+<p id="warning" style="color: red;"></p>
+
+<button type="button" class="likeButton">いいね</button>
+            
+            <footer class="footer">
+
+
+  <p class="copyright">
+    </p><p>© 2024 作曲アプリ　岡山県立岡山操山中学校</p>
+</footer>
+            
+<div class="border-radius">            
+  <div class="keep">
+<div class="radius_test">
+  <a class="aaaa" href="https://docs.google.com/forms/d/e/1FAIpQLSe1FZ7Kd0bZZ0pZmNHzV0yLofpYyOT83_mKtSChHgpXiia3ow/viewform?usp=sf_link" target="_blank">作った曲を<br>批評する</a>
+</div>
+    </div>
+   </div>
+            <br>
+            
+            
+<script>
+  // アコーディオン内のすべてのdetails要素に対してイベントリスナーを設定
+document.querySelectorAll('.accordion details').forEach(details => {
+    // details要素のtoggleイベント（開閉状態の変更）を監視
+    details.addEventListener('toggle', event => {
+      // 現在のdetails要素内のcontent要素を取得
+      const content = details.querySelector('.sound');
+      
+      if (details.open) {
+        // アコーディオンが開かれた場合
+        const keyframes = [
+          { height: '0px', opacity: 0 },  // 開始状態：高さ0、透明度0
+          { height: `${content.scrollHeight}px`, opacity: 1 }  // 終了状態：実際の高さ、透明度1
+        ];
+        // アニメーションを実行
+        content.animate(keyframes, {
+          duration: 300,  // アニメーション時間：300ミリ秒
+          fill: 'forwards'  // アニメーション終了後も最終フレームを維持
+        }).onfinish = () => {
+          // アニメーション完了後、高さをautoに設定して内容に合わせて調整
+          content.style.height = 'auto';
+        };
+      } else {
+        // アコーディオンが閉じられた場合
+        const keyframes = [
+          { height: `${content.scrollHeight}px`, opacity: 1 },  // 開始状態：実際の高さ、透明度1
+          { height: '0px', opacity: 0 }  // 終了状態：高さ0、透明度0
+        ];
+        // アニメーションを実行
+        content.animate(keyframes, {
+          duration: 300,  // アニメーション時間：300ミリ秒
+          fill: 'forwards'  // アニメーション終了後も最終フレームを維持
+        }).onfinish = () => {
+          // アニメーション完了後、height指定を削除
+          // これにより、ページ内検索時にコンテンツが表示可能になる
+          content.style.height = '';
+        };
+      }
+    });
+  });
+  
+  document.addEventListener('DOMContentLoaded', function() {
+ var likeButtons = document.getElementsByClassName('likeButton');
+ Array.from(likeButtons).forEach(function(likeButton) {
+ likeButton.addEventListener('click', function() {
+ likeButton.classList.toggle('liked');
+ });
+ });
+ }, false);
+  
+    // リアルタイムで文字数を更新する
+    document.getElementById("inputText").addEventListener("input", function() {
+        var text = this.value;
+        document.getElementById("charCount").textContent = text.length;
+    });
+  
+    function checkInput() {
+        var text = document.getElementById("inputText").value;
+        var warningElement = document.getElementById("warning");
+
+        if (text.length === 1) {
+            warningElement.textContent = "アルファベットが1文字です。";
+            generateMusic(true);
+            return;
+        }
+
+        if (text.length === 2) {
+            warningElement.textContent = "アルファベット列が2文字です。";
+            generateMusic(false, true);
+            return;
+        }
+
+        if (text.length === 3) {
+            warningElement.textContent = "アルファベット列が3文字です。";
+            generateMusic(false, false, true);
+            return;
+        }
+
+        if (text.length === 4) {
+            warningElement.textContent = " アルファベット列が4文字です。";
+            generateMusic(false, false, false, true);
+            return;
+        }
+
+        if (text.length === 5) {
+            warningElement.textContent = "アルファベット列が5文字です。";
+            generateMusic(false, false, false, false, true);
+            return;
+        }
+
+        if (text.length === 6) {
+            warningElement.textContent = "アルファベット列が6文字です。";
+            generateMusic(false, false, false, false, false, true);
+            return;
+        }
+
+        if (text.length === 7) {
+            warningElement.textContent = "アルファベット列が7文字です。";
+            generateMusicForSevenLetters();
+            return;
+        }
+
+        if (text.length === 8) {
+            warningElement.textContent = "アルファベット列が8文字です。";
+            generateMusicForEightLetters();
+            return;
+        }
+
+        if (text.length === 9) {
+            warningElement.textContent = "アルファベット列が9文字です。";
+            generateMusicForNineLetters();
+            return;
+        }
+
+        if (text.length === 10) {
+            warningElement.textContent = "アルファベット列が10文字です。";
+            generateMusicForTenLetters();
+            return;
+        }
+
+        if (text.length === 11) {
+            warningElement.textContent = "アルファベット列が11文字です。";
+            generateMusicForElevenLetters();
+            return;
+        }
+
+        if (text.length === 12) {
+            warningElement.textContent = "アルファベット列が12文字です。";
+            generateMusicForTwelveLetters();
+            return;
+        }
+
+        if (text.length === 13) {
+            warningElement.textContent = "アルファベット列が13文字です。";
+            generateMusicForThirteenLetters();
+            return;
+        }
+
+        warningElement.textContent = "警告: 入力は1〜13文字である必要があります。";
+    }
+
+    function generateMusic(isSingleLetter, isTwoLetters, isThreeLetters, isFourLetters, isFiveLetters, isSixLetters) {
+        var text = document.getElementById("inputText").value;
+        var audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        var baseFrequency = 261.63; // C4の周波数
+      
+          // ユーザーが選択した音階の種類（普通かヨナ抜きか）を取得
+        var scaleType = document.getElementById("scaleType").value;
+        var tempo = document.getElementById("tempo").value;
+      
+        // ユーザーが選択した音階を取得
+        var selectedScale = document.getElementById("key").value;
+        var baseFrequency = parseFloat(selectedScale); // 選択された音階の周波数
+
+     if (scaleType === "yonanuki") {
+        // ヨナ抜き音階 (例: Cヨナ抜きの場合、C, D, E, G, A)
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 7, 'E': 9, 'F': 12, 'G': 14,
+            'H': 0, 'I': 2, 'J': 4, 'K': 7, 'L': 9, 'M': 12, 'N': 14,
+            'O': 0, 'P': 2, 'Q': 4, 'R': 7, 'S': 9, 'T': 12, 'U': 14,
+            'V': 0, 'W': 2, 'X': 4, 'Y': 7, 'Z': 9};
+    } else if (scaleType === "ryukyu") {
+        // 琉球音階 (例: C琉球音階の場合、C, E, F, G, B)
+        noteOffsets = {'A': 0, 'B': 4, 'C': 5, 'D': 7, 'E': 11, 'F': 12, 'G': 16,
+            'H': 0, 'I': 4, 'J': 5, 'K': 7, 'L': 11, 'M': 12, 'N': 16,
+            'O': 0, 'P': 4, 'Q': 5, 'R': 7, 'S': 11, 'T': 12, 'U': 16,
+            'V': 0, 'W': 4, 'X': 5, 'Y': 7, 'Z': 11};
+      //全音階
+    }else if(scaleType == "zenon"){
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 6, 'E': 8, 'F': 10, 'G': 12,
+            'H': 14, 'I': 16, 'J': 0, 'K': 2, 'L': 4, 'M': 6, 'N': 8,
+            'O': 10, 'P': 12, 'Q': 14, 'R': 16, 'S': 0, 'T': 2, 'U': 4,
+            'V': 6, 'W': 8, 'X': 10, 'Y': 12, 'Z': 14};
+      
+      //四抜き音階
+    }else if(scaleType == "yonuki"){
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 7, 'E': 9, 'F': 11, 'G': 12,
+            'H': 14, 'I': 16, 'J': 0, 'K': 2, 'L': 4, 'M': 7, 'N': 9,
+            'O':11 , 'P': 12, 'Q': 14, 'R': 16, 'S': 0, 'T': 2, 'U': 4,
+            'V': 7, 'W': 9, 'X': 11, 'Y': 12, 'Z': 14
+        };
+      //四六抜き音階
+    } else if(scaleType=="roku"){
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 7, 'E': 11, 'F': 12, 'G': 14,
+            'H': 16, 'I': 0, 'J': 2, 'K': 4, 'L': 7, 'M': 11, 'N': 12,
+            'O': 14, 'P': 16, 'Q': 0, 'R': 2, 'S': 4, 'T': 7, 'U': 11,
+            'V': 12, 'W': 14, 'X': 16, 'Y': 0, 'Z': 2};
+      
+   } else if(scaleType=="minyo"){
+        noteOffsets = {'A': 0, 'B': 3, 'C': 5, 'D': 7, 'E': 10, 'F': 12, 'G': 0,
+            'H': 3, 'I': 5, 'J': 7, 'K': 10, 'L': 12, 'M': 0, 'N': 3,
+            'O': 5, 'P': 7, 'Q': 10, 'R': 12, 'S': 0, 'T': 3, 'U': 5,
+            'V': 7, 'W': 9, 'X': 12, 'Y': 0, 'Z': 3
+        };
+        } else if(scaleType=="ritu"){
+        noteOffsets = {'A': 0, 'B': 2, 'C': 5, 'D': 7, 'E': 9, 'F': 12, 'G': 0,
+            'H': 2, 'I': 5, 'J': 7, 'K': 9, 'L': 12, 'M': 0, 'N': 2,
+            'O': 5, 'P': 7, 'Q': 9, 'R': 12, 'S': 0, 'T': 2, 'U': 5,
+            'V': 7, 'W': 9, 'X': 12, 'Y': 0, 'Z': 2
+        };
+      
+    }else {
+        // 普通の音階
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 5, 'E': 7, 'F': 9, 'G': 11,
+            'H': 12, 'I': 14, 'J': 16, 'K': 0, 'L': 2, 'M': 4, 'N': 5,
+            'O': 7, 'P': 9, 'Q': 11, 'R': 12, 'S': 14, 'T': 16, 'U': 0,
+            'V': 2, 'W': 4, 'X': 5, 'Y': 7, 'Z': 9
+        };
+    }
+      
+        var currentTime = audioContext.currentTime;
+        var quarterNoteTime = 60 / parseFloat(tempo); // テンポに応じた四分音符の時間
+        var eighthNoteTime = quarterNoteTime / 2;
+        var sixteenthNoteTime = quarterNoteTime / 4;
+
+        if (isSingleLetter) {
+            playNote(audioContext, currentTime, baseFrequency, quarterNoteTime);
+            currentTime += quarterNoteTime;
+            currentTime += eighthNoteTime;
+　
+            var letter = text.charAt(0).toUpperCase();
+            var letterFrequency = noteOffsets[letter] !== undefined ? baseFrequency * Math.pow(2, noteOffsets[letter] / 12) : baseFrequency;
+            if (noteOffsets[letter] !== undefined) {
+                playNote(audioContext, currentTime, letterFrequency, eighthNoteTime);
+                currentTime += eighthNoteTime;
+            }
+
+            playNote(audioContext, currentTime, baseFrequency, quarterNoteTime);
+            return;
+        }
+
+        if (isTwoLetters) {
+            playNote(audioContext, currentTime, baseFrequency, quarterNoteTime);
+            currentTime += quarterNoteTime;
+
+            for (var i = 0; i < 2; i++) {
+                var char = text.charAt(i).toUpperCase();
+                var frequency = noteOffsets[char] !== undefined ? baseFrequency * Math.pow(2, noteOffsets[char] / 12) : baseFrequency;
+                playNote(audioContext, currentTime, frequency, eighthNoteTime);
+                currentTime += eighthNoteTime;
+            }
+
+            playNote(audioContext, currentTime, baseFrequency, quarterNoteTime);
+            return;
+        }
+
+        if (isThreeLetters) {
+            playNote(audioContext, currentTime, baseFrequency, quarterNoteTime);
+            currentTime += quarterNoteTime;
+            currentTime += eighthNoteTime;
+
+            for (var i = 0; i < 3; i++) {
+                var char = text.charAt(i).toUpperCase();
+                var frequency = noteOffsets[char] !== undefined ? baseFrequency * Math.pow(2, noteOffsets[char] / 12) : baseFrequency;
+                playNote(audioContext, currentTime, frequency, sixteenthNoteTime);
+                currentTime += sixteenthNoteTime;
+            }
+
+            playNote(audioContext, currentTime, baseFrequency, quarterNoteTime);
+            return;
+        }
+
+        if (isFourLetters) {
+            playNote(audioContext, currentTime, baseFrequency, quarterNoteTime);
+            currentTime += quarterNoteTime;
+
+            for (var i = 0; i < 4; i++) {
+                var char = text.charAt(i).toUpperCase();
+                var duration = (i === 1 || i === 2) ? sixteenthNoteTime : eighthNoteTime;
+                var frequency = noteOffsets[char] !== undefined ? baseFrequency * Math.pow(2, noteOffsets[char] / 12) : baseFrequency;
+                playNote(audioContext, currentTime, frequency, duration);
+                currentTime += duration;
+            }
+
+            playNote(audioContext, currentTime, baseFrequency, quarterNoteTime);
+            return;
+        }
+
+        if (isFiveLetters) {
+            playNote(audioContext, currentTime, baseFrequency, quarterNoteTime);
+            currentTime += quarterNoteTime;
+            currentTime += eighthNoteTime;
+
+            for (var i = 0; i < 5; i++) {
+                var char = text.charAt(i).toUpperCase();
+                var duration;
+                if (i === 0 || i === 1) {
+                    duration = eighthNoteTime;
+                } else if (i === 2 || i === 3) {
+                    duration = sixteenthNoteTime;
+                } else {
+                    duration = eighthNoteTime;
+                }
+                var frequency = noteOffsets[char] !== undefined ? baseFrequency * Math.pow(2, noteOffsets[char] / 12) : baseFrequency;
+                playNote(audioContext, currentTime, frequency, duration);
+                currentTime += duration;
+            }
+
+            playNote(audioContext, currentTime, baseFrequency, quarterNoteTime);
+            return;
+        }
+
+        if (isSixLetters) {
+            playNote(audioContext, currentTime, baseFrequency, quarterNoteTime);
+            currentTime += quarterNoteTime;
+            currentTime += eighthNoteTime;
+
+            for (var i = 0; i < 6; i++) {
+                var char = text.charAt(i).toUpperCase();
+                var duration;
+                if (i === 0) {
+                    duration = eighthNoteTime;
+                } else if (i >= 1 && i <= 4) {
+                    duration = sixteenthNoteTime;
+                } else {
+                    duration = eighthNoteTime;
+                }
+                var frequency = noteOffsets[char] !== undefined ? baseFrequency * Math.pow(2, noteOffsets[char] / 12) : baseFrequency;
+                playNote(audioContext, currentTime, frequency, duration);
+                currentTime += duration;
+            }
+
+            playNote(audioContext, currentTime, baseFrequency, quarterNoteTime);
+            return;
+        }
+    }
+
+    function generateMusicForSevenLetters() {
+        var text = document.getElementById("inputText").value;
+        var audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        var baseFrequency = 261.63; // C4の周波数
+      
+          // ユーザーが選択した音階の種類（普通かヨナ抜きか）を取得
+        var scaleType = document.getElementById("scaleType").value;
+
+        // ユーザーが選択した音階を取得
+        var selectedScale = document.getElementById("key").value;
+        var baseFrequency = parseFloat(selectedScale); // 選択された音階の周波数
+
+     if (scaleType === "yonanuki") {
+        // ヨナ抜き音階 (例: Cヨナ抜きの場合、C, D, E, G, A)
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 7, 'E': 9, 'F': 12, 'G': 14,
+            'H': 0, 'I': 2, 'J': 4, 'K': 7, 'L': 9, 'M': 12, 'N': 14,
+            'O': 0, 'P': 2, 'Q': 4, 'R': 7, 'S': 9, 'T': 12, 'U': 14,
+            'V': 0, 'W': 2, 'X': 4, 'Y': 7, 'Z': 9};
+    } else if (scaleType === "ryukyu") {
+        // 琉球音階 (例: C琉球音階の場合、C, E, F, G, B)
+        noteOffsets = {'A': 0, 'B': 4, 'C': 5, 'D': 7, 'E': 11, 'F': 12, 'G': 16,
+            'H': 0, 'I': 4, 'J': 5, 'K': 7, 'L': 11, 'M': 12, 'N': 16,
+            'O': 0, 'P': 4, 'Q': 5, 'R': 7, 'S': 11, 'T': 12, 'U': 16,
+            'V': 0, 'W': 4, 'X': 5, 'Y': 7, 'Z': 11};
+    } else if(scaleType == "zenon"){
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 6, 'E': 8, 'F': 10, 'G': 12,
+            'H': 14, 'I': 16, 'J': 0, 'K': 2, 'L': 4, 'M': 6, 'N': 8,
+            'O': 10, 'P': 12, 'Q': 14, 'R': 16, 'S': 0, 'T': 2, 'U': 4,
+            'V': 6, 'W': 8, 'X': 10, 'Y': 12, 'Z': 14};        
+      
+    } else if(scaleType == "yonuki"){
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 7, 'E': 9, 'F': 11, 'G': 12,
+            'H': 14, 'I': 16, 'J': 0, 'K': 2, 'L': 4, 'M': 7, 'N': 9,
+            'O':11 , 'P': 12, 'Q': 14, 'R': 16, 'S': 0, 'T': 2, 'U': 4,
+            'V': 7, 'W': 9, 'X': 11, 'Y': 12, 'Z': 14
+        };
+      
+    } else if(scaleType=="roku"){
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 7, 'E': 11, 'F': 12, 'G': 14,
+            'H': 16, 'I': 0, 'J': 2, 'K': 4, 'L': 7, 'M': 11, 'N': 12,
+            'O': 14, 'P': 16, 'Q': 0, 'R': 2, 'S': 4, 'T': 7, 'U': 11,
+            'V': 12, 'W': 14, 'X': 16, 'Y': 0, 'Z': 2
+        };
+         } else if(scaleType=="minyo"){
+        noteOffsets = {'A': 0, 'B': 3, 'C': 5, 'D': 7, 'E': 10, 'F': 12, 'G': 0,
+            'H': 3, 'I': 5, 'J': 7, 'K': 10, 'L': 12, 'M': 0, 'N': 3,
+            'O': 5, 'P': 7, 'Q': 10, 'R': 12, 'S': 0, 'T': 3, 'U': 5,
+            'V': 7, 'W': 9, 'X': 12, 'Y': 0, 'Z': 3
+        };
+           
+                   } else if(scaleType=="ritu"){
+        noteOffsets = {'A': 0, 'B': 2, 'C': 5, 'D': 7, 'E': 9, 'F': 12, 'G': 0,
+            'H': 2, 'I': 5, 'J': 7, 'K': 9, 'L': 12, 'M': 0, 'N': 2,
+            'O': 5, 'P': 7, 'Q': 9, 'R': 12, 'S': 0, 'T': 2, 'U': 5,
+            'V': 7, 'W': 9, 'X': 12, 'Y': 0, 'Z': 2
+        };
+                     
+    }else {
+        // 普通の音階
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 5, 'E': 7, 'F': 9, 'G': 11,
+            'H': 12, 'I': 14, 'J': 16, 'K': 0, 'L': 2, 'M': 4, 'N': 5,
+            'O': 7, 'P': 9, 'Q': 11, 'R': 12, 'S': 14, 'T': 16, 'U': 0,
+            'V': 2, 'W': 4, 'X': 5, 'Y': 7, 'Z': 9
+        };
+    }
+        var currentTime = audioContext.currentTime;
+        var tempo = document.getElementById("tempo").value;
+
+    // テンポに基づいた四分音符の長さを計算
+        var quarterNoteTime = 60 / parseFloat(tempo); // テンポに応じた四分音符の時間
+        var eighthNoteTime = quarterNoteTime / 2;
+        var sixteenthNoteTime = quarterNoteTime / 4;
+
+        // 最初にC4の音を四分音符で再生
+        playNote(audioContext, currentTime, baseFrequency, quarterNoteTime);
+        currentTime += quarterNoteTime;
+
+        // 八分休符を追加
+        currentTime += eighthNoteTime;
+
+        // 1文字目と2文字目を16分音符で再生
+        for (var i = 0; i < 2; i++) {
+            var char = text.charAt(i).toUpperCase();
+            if (noteOffsets[char] !== undefined) {
+                var frequency = baseFrequency * Math.pow(2, noteOffsets[char] / 12);
+                playNote(audioContext, currentTime, frequency, sixteenthNoteTime);
+                currentTime += sixteenthNoteTime;
+            }
+        }
+
+        // 3文字目〜7文字目を八分音符で再生
+        for (var i = 2; i < 7; i++) {
+            var char = text.charAt(i).toUpperCase();
+            if (noteOffsets[char] !== undefined) {
+                var frequency = baseFrequency * Math.pow(2, noteOffsets[char] / 12);
+                playNote(audioContext, currentTime, frequency, eighthNoteTime);
+                currentTime += eighthNoteTime;
+            }
+        }
+
+        // 最後にC4の音を八分音符で再生
+        playNote(audioContext, currentTime, baseFrequency, eighthNoteTime);
+    }
+
+    function generateMusicForEightLetters() {
+        var text = document.getElementById("inputText").value;
+        var audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        var baseFrequency = 261.63; // C4の周波数
+      
+          // ユーザーが選択した音階の種類（普通かヨナ抜きか）を取得
+        var scaleType = document.getElementById("scaleType").value;
+
+      
+        // ユーザーが選択した音階を取得
+        var selectedScale = document.getElementById("key").value;
+        var baseFrequency = parseFloat(selectedScale); // 選択された音階の周波数
+
+     if (scaleType === "yonanuki") {
+        // ヨナ抜き音階 (例: Cヨナ抜きの場合、C, D, E, G, A)
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 7, 'E': 9, 'F': 12, 'G': 14,
+            'H': 0, 'I': 2, 'J': 4, 'K': 7, 'L': 9, 'M': 12, 'N': 14,
+            'O': 0, 'P': 2, 'Q': 4, 'R': 7, 'S': 9, 'T': 12, 'U': 14,
+            'V': 0, 'W': 2, 'X': 4, 'Y': 7, 'Z': 9};
+    } else if (scaleType === "ryukyu") {
+        // 琉球音階 (例: C琉球音階の場合、C, E, F, G, B)
+        noteOffsets = {'A': 0, 'B': 4, 'C': 5, 'D': 7, 'E': 11, 'F': 12, 'G': 16,
+            'H': 0, 'I': 4, 'J': 5, 'K': 7, 'L': 11, 'M': 12, 'N': 16,
+            'O': 0, 'P': 4, 'Q': 5, 'R': 7, 'S': 11, 'T': 12, 'U': 16,
+            'V': 0, 'W': 4, 'X': 5, 'Y': 7, 'Z': 11};
+    } else if(scaleType == "zenon"){
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 6, 'E': 8, 'F': 10, 'G': 12,
+            'H': 14, 'I': 16, 'J': 0, 'K': 2, 'L': 4, 'M': 6, 'N': 8,
+            'O': 10, 'P': 12, 'Q': 14, 'R': 16, 'S': 0, 'T': 2, 'U': 4,
+            'V': 6, 'W': 8, 'X': 10, 'Y': 12, 'Z': 14};        
+      
+    }else if(scaleType == "yonuki"){
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 7, 'E': 9, 'F': 11, 'G': 12,
+            'H': 14, 'I': 16, 'J': 0, 'K': 2, 'L': 4, 'M': 7, 'N': 9,
+            'O':11 , 'P': 12, 'Q': 14, 'R': 16, 'S': 0, 'T': 2, 'U': 4,
+            'V': 7, 'W': 9, 'X': 11, 'Y': 12, 'Z': 14
+        };
+      
+    }else if(scaleType=="roku"){
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 7, 'E': 11, 'F': 12, 'G': 14,
+            'H': 16, 'I': 0, 'J': 2, 'K': 4, 'L': 7, 'M': 11, 'N': 12,
+            'O': 14, 'P': 16, 'Q': 0, 'R': 2, 'S': 4, 'T': 7, 'U': 11,
+            'V': 12, 'W': 14, 'X': 16, 'Y': 0, 'Z': 2
+        };
+         } else if(scaleType=="minyo"){
+        noteOffsets = {'A': 0, 'B': 3, 'C': 5, 'D': 7, 'E': 10, 'F': 12, 'G': 0,
+            'H': 3, 'I': 5, 'J': 7, 'K': 10, 'L': 12, 'M': 0, 'N': 3,
+            'O': 5, 'P': 7, 'Q': 10, 'R': 12, 'S': 0, 'T': 3, 'U': 5,
+            'V': 7, 'W': 9, 'X': 12, 'Y': 0, 'Z': 3
+        };
+                   } else if(scaleType=="ritu"){
+        noteOffsets = {'A': 0, 'B': 2, 'C': 5, 'D': 7, 'E': 9, 'F': 12, 'G': 0,
+            'H': 2, 'I': 5, 'J': 7, 'K': 9, 'L': 12, 'M': 0, 'N': 2,
+            'O': 5, 'P': 7, 'Q': 9, 'R': 12, 'S': 0, 'T': 2, 'U': 5,
+            'V': 7, 'W': 9, 'X': 12, 'Y': 0, 'Z': 2
+        };
+    } else {
+        // 普通の音階
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 5, 'E': 7, 'F': 9, 'G': 11,
+            'H': 12, 'I': 14, 'J': 16, 'K': 0, 'L': 2, 'M': 4, 'N': 5,
+            'O': 7, 'P': 9, 'Q': 11, 'R': 12, 'S': 14, 'T': 16, 'U': 0,
+            'V': 2, 'W': 4, 'X': 5, 'Y': 7, 'Z': 9
+        };
+    }
+        var currentTime = audioContext.currentTime;
+        var tempo = document.getElementById("tempo").value;
+
+    // テンポに基づいた四分音符の長さを計算
+        var quarterNoteTime = 60 / parseFloat(tempo); // テンポに応じた四分音符の時間
+        var eighthNoteTime = quarterNoteTime / 2;
+        var sixteenthNoteTime = quarterNoteTime / 4;
+
+        // 最初にC4の音を四分音符で再生
+        playNote(audioContext, currentTime, baseFrequency, quarterNoteTime);
+        currentTime += quarterNoteTime;
+
+        // 1文字目と2文字目を八分音符で再生
+        for (var i = 0; i < 2; i++) {
+            var char = text.charAt(i).toUpperCase();
+            if (noteOffsets[char] !== undefined) {
+                var frequency = baseFrequency * Math.pow(2, noteOffsets[char] / 12);
+                playNote(audioContext, currentTime, frequency, eighthNoteTime);
+                currentTime += eighthNoteTime;
+            }
+        }
+
+        // 八分休符を追加
+        currentTime += eighthNoteTime;
+
+        // 3文字目〜6文字目を八分音符で再生
+        for (var i = 2; i < 6; i++) {
+            var char = text.charAt(i).toUpperCase();
+            if (noteOffsets[char] !== undefined) {
+                var frequency = baseFrequency * Math.pow(2, noteOffsets[char] / 12);
+                playNote(audioContext, currentTime, frequency, eighthNoteTime);
+                currentTime += eighthNoteTime;
+            }
+        }
+
+        // 7文字目と8文字目を16分音符で再生
+        for (var i = 6; i < 8; i++) {
+            var char = text.charAt(i).toUpperCase();
+            if (noteOffsets[char] !== undefined) {
+                var frequency = baseFrequency * Math.pow(2, noteOffsets[char] / 12);
+                playNote(audioContext, currentTime, frequency, sixteenthNoteTime);
+                currentTime += sixteenthNoteTime;
+            }
+        }
+
+        // 最後にC4の音を四分音符で再生
+        playNote(audioContext, currentTime, baseFrequency, quarterNoteTime);
+    }
+
+    function generateMusicForNineLetters() {
+        var text = document.getElementById("inputText").value;
+        var audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        var baseFrequency = 261.63; // C4の周波数
+      
+          // ユーザーが選択した音階の種類（普通かヨナ抜きか）を取得
+        var scaleType = document.getElementById("scaleType").value;
+
+      
+        // ユーザーが選択した音階を取得
+        var selectedScale = document.getElementById("key").value;
+        var baseFrequency = parseFloat(selectedScale); // 選択された音階の周波数
+
+     if (scaleType === "yonanuki") {
+        // ヨナ抜き音階 (例: Cヨナ抜きの場合、C, D, E, G, A)
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 7, 'E': 9, 'F': 12, 'G': 14,
+            'H': 0, 'I': 2, 'J': 4, 'K': 7, 'L': 9, 'M': 12, 'N': 14,
+            'O': 0, 'P': 2, 'Q': 4, 'R': 7, 'S': 9, 'T': 12, 'U': 14,
+            'V': 0, 'W': 2, 'X': 4, 'Y': 7, 'Z': 9};
+    } else if (scaleType === "ryukyu") {
+        // 琉球音階 (例: C琉球音階の場合、C, E, F, G, B)
+        noteOffsets = {'A': 0, 'B': 4, 'C': 5, 'D': 7, 'E': 11, 'F': 12, 'G': 16,
+            'H': 0, 'I': 4, 'J': 5, 'K': 7, 'L': 11, 'M': 12, 'N': 16,
+            'O': 0, 'P': 4, 'Q': 5, 'R': 7, 'S': 11, 'T': 12, 'U': 16,
+            'V': 0, 'W': 4, 'X': 5, 'Y': 7, 'Z': 11};
+    } else if(scaleType == "zenon"){
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 6, 'E': 8, 'F': 10, 'G': 12,
+            'H': 14, 'I': 16, 'J': 0, 'K': 2, 'L': 4, 'M': 6, 'N': 8,
+            'O': 10, 'P': 12, 'Q': 14, 'R': 16, 'S': 0, 'T': 2, 'U': 4,
+            'V': 6, 'W': 8, 'X': 10, 'Y': 12, 'Z': 14};        
+      
+    } else if(scaleType == "yonuki"){
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 7, 'E': 9, 'F': 11, 'G': 12,
+            'H': 14, 'I': 16, 'J': 0, 'K': 2, 'L': 4, 'M': 7, 'N': 9,
+            'O':11 , 'P': 12, 'Q': 14, 'R': 16, 'S': 0, 'T': 2, 'U': 4,
+            'V': 7, 'W': 9, 'X': 11, 'Y': 12, 'Z': 14
+        };
+      
+    }else if(scaleType=="roku"){
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 7, 'E': 11, 'F': 12, 'G': 14,
+            'H': 16, 'I': 0, 'J': 2, 'K': 4, 'L': 7, 'M': 11, 'N': 12,
+            'O': 14, 'P': 16, 'Q': 0, 'R': 2, 'S': 4, 'T': 7, 'U': 11,
+            'V': 12, 'W': 14, 'X': 16, 'Y': 0, 'Z': 2
+        };
+      
+    } else if(scaleType=="minyo"){
+        noteOffsets = {'A': 0, 'B': 3, 'C': 5, 'D': 7, 'E': 10, 'F': 12, 'G': 0,
+            'H': 3, 'I': 5, 'J': 7, 'K': 10, 'L': 12, 'M': 0, 'N': 3,
+            'O': 5, 'P': 7, 'Q': 10, 'R': 12, 'S': 0, 'T': 3, 'U': 5,
+            'V': 7, 'W': 9, 'X': 12, 'Y': 0, 'Z': 3
+        };
+              } else if(scaleType=="ritu"){
+        noteOffsets = {'A': 0, 'B': 2, 'C': 5, 'D': 7, 'E': 9, 'F': 12, 'G': 0,
+            'H': 2, 'I': 5, 'J': 7, 'K': 9, 'L': 12, 'M': 0, 'N': 2,
+            'O': 5, 'P': 7, 'Q': 9, 'R': 12, 'S': 0, 'T': 2, 'U': 5,
+            'V': 7, 'W': 9, 'X': 12, 'Y': 0, 'Z': 2
+        };
+                
+    } else {
+        // 普通の音階
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 5, 'E': 7, 'F': 9, 'G': 11,
+            'H': 12, 'I': 14, 'J': 16, 'K': 0, 'L': 2, 'M': 4, 'N': 5,
+            'O': 7, 'P': 9, 'Q': 11, 'R': 12, 'S': 14, 'T': 16, 'U': 0,
+            'V': 2, 'W': 4, 'X': 5, 'Y': 7, 'Z': 9
+        };
+    }
+        var currentTime = audioContext.currentTime;
+        var tempo = document.getElementById("tempo").value;
+
+    // テンポに基づいた四分音符の長さを計算
+        var quarterNoteTime = 60 / parseFloat(tempo); // テンポに応じた四分音符の時間
+        var eighthNoteTime = quarterNoteTime / 2;
+        var sixteenthNoteTime = quarterNoteTime / 4;
+
+        // 最初にC4の音を四分音符で再生
+        playNote(audioContext, currentTime, baseFrequency, quarterNoteTime);
+        currentTime += quarterNoteTime;
+
+        // 1文字目を八分音符で再生
+        var firstChar = text.charAt(0).toUpperCase();
+        if (noteOffsets[firstChar] !== undefined) {
+            var firstFrequency = baseFrequency * Math.pow(2, noteOffsets[firstChar] / 12);
+            playNote(audioContext, currentTime, firstFrequency, eighthNoteTime);
+            currentTime += eighthNoteTime;
+        } else {
+            currentTime += eighthNoteTime;
+        }
+
+        // 2文字目と3文字目を16分音符で再生
+        for (var i = 1; i <= 2; i++) {
+            var char = text.charAt(i).toUpperCase();
+            if (noteOffsets[char] !== undefined) {
+                var frequency = baseFrequency * Math.pow(2, noteOffsets[char] / 12);
+                playNote(audioContext, currentTime, frequency, sixteenthNoteTime);
+                currentTime += sixteenthNoteTime;
+            } else {
+                currentTime += sixteenthNoteTime;
+            }
+        }
+
+        // 八分休符を追加
+        currentTime += eighthNoteTime;
+
+        // 4文字目〜7文字目を八分音符で再生
+        for (var i = 3; i <= 6; i++) {
+            var char = text.charAt(i).toUpperCase();
+            if (noteOffsets[char] !== undefined) {
+                var frequency = baseFrequency * Math.pow(2, noteOffsets[char] / 12);
+                playNote(audioContext, currentTime, frequency, eighthNoteTime);
+                currentTime += eighthNoteTime;
+            } else {
+                currentTime += eighthNoteTime;
+            }
+        }
+
+        // 7文字目と8文字目を16分音符で再生
+        for (var i = 7; i <= 8; i++) {
+            var char = text.charAt(i).toUpperCase();
+            if (noteOffsets[char] !== undefined) {
+                var frequency = baseFrequency * Math.pow(2, noteOffsets[char] / 12);
+                playNote(audioContext, currentTime, frequency, sixteenthNoteTime);
+                currentTime += sixteenthNoteTime;
+            } else {
+                currentTime += sixteenthNoteTime;
+            }
+        }
+
+        // 最後にC4の音を四分音符で再生
+        playNote(audioContext, currentTime, baseFrequency, quarterNoteTime);
+    }
+
+    function generateMusicForTenLetters() {
+        var text = document.getElementById("inputText").value;
+        var audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        var baseFrequency = 261.63; // C4の周波数
+      
+          // ユーザーが選択した音階の種類（普通かヨナ抜きか）を取得
+        var scaleType = document.getElementById("scaleType").value;
+
+      
+        // ユーザーが選択した音階を取得
+        var selectedScale = document.getElementById("key").value;
+        var baseFrequency = parseFloat(selectedScale); // 選択された音階の周波数
+
+     if (scaleType === "yonanuki") {
+        // ヨナ抜き音階 (例: Cヨナ抜きの場合、C, D, E, G, A)
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 7, 'E': 9, 'F': 12, 'G': 14,
+            'H': 0, 'I': 2, 'J': 4, 'K': 7, 'L': 9, 'M': 12, 'N': 14,
+            'O': 0, 'P': 2, 'Q': 4, 'R': 7, 'S': 9, 'T': 12, 'U': 14,
+            'V': 0, 'W': 2, 'X': 4, 'Y': 7, 'Z': 9};
+    } else if (scaleType === "ryukyu") {
+        // 琉球音階 (例: C琉球音階の場合、C, E, F, G, B)
+        noteOffsets = {'A': 0, 'B': 4, 'C': 5, 'D': 7, 'E': 11, 'F': 12, 'G': 16,
+            'H': 0, 'I': 4, 'J': 5, 'K': 7, 'L': 11, 'M': 12, 'N': 16,
+            'O': 0, 'P': 4, 'Q': 5, 'R': 7, 'S': 11, 'T': 12, 'U': 16,
+            'V': 0, 'W': 4, 'X': 5, 'Y': 7, 'Z': 11};
+    } else if(scaleType == "zenon"){
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 6, 'E': 8, 'F': 10, 'G': 12,
+            'H': 14, 'I': 16, 'J': 0, 'K': 2, 'L': 4, 'M': 6, 'N': 8,
+            'O': 10, 'P': 12, 'Q': 14, 'R': 16, 'S': 0, 'T': 2, 'U': 4,
+            'V': 6, 'W': 8, 'X': 10, 'Y': 12, 'Z': 14};        
+      
+    }else if(scaleType == "yonuki"){
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 7, 'E': 9, 'F': 11, 'G': 12,
+            'H': 14, 'I': 16, 'J': 0, 'K': 2, 'L': 4, 'M': 7, 'N': 9,
+            'O':11 , 'P': 12, 'Q': 14, 'R': 16, 'S': 0, 'T': 2, 'U': 4,
+            'V': 7, 'W': 9, 'X': 11, 'Y': 12, 'Z': 14
+        };
+      
+    }else if(scaleType=="roku"){
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 7, 'E': 11, 'F': 12, 'G': 14,
+            'H': 16, 'I': 0, 'J': 2, 'K': 4, 'L': 7, 'M': 11, 'N': 12,
+            'O': 14, 'P': 16, 'Q': 0, 'R': 2, 'S': 4, 'T': 7, 'U': 11,
+            'V': 12, 'W': 14, 'X': 16, 'Y': 0, 'Z': 2
+        };
+         } else if(scaleType=="minyo"){
+        noteOffsets = {'A': 0, 'B': 3, 'C': 5, 'D': 7, 'E': 10, 'F': 12, 'G': 0,
+            'H': 3, 'I': 5, 'J': 7, 'K': 10, 'L': 12, 'M': 0, 'N': 3,
+            'O': 5, 'P': 7, 'Q': 10, 'R': 12, 'S': 0, 'T': 3, 'U': 5,
+            'V': 7, 'W': 9, 'X': 12, 'Y': 0, 'Z': 3
+        };
+                   } else if(scaleType=="ritu"){
+        noteOffsets = {'A': 0, 'B': 2, 'C': 5, 'D': 7, 'E': 9, 'F': 12, 'G': 0,
+            'H': 2, 'I': 5, 'J': 7, 'K': 9, 'L': 12, 'M': 0, 'N': 2,
+            'O': 5, 'P': 7, 'Q': 9, 'R': 12, 'S': 0, 'T': 2, 'U': 5,
+            'V': 7, 'W': 9, 'X': 12, 'Y': 0, 'Z': 2
+        };
+    } else {
+        // 普通の音階
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 5, 'E': 7, 'F': 9, 'G': 11,
+            'H': 12, 'I': 14, 'J': 16, 'K': 0, 'L': 2, 'M': 4, 'N': 5,
+            'O': 7, 'P': 9, 'Q': 11, 'R': 12, 'S': 14, 'T': 16, 'U': 0,
+            'V': 2, 'W': 4, 'X': 5, 'Y': 7, 'Z': 9
+        };
+    }
+        var currentTime = audioContext.currentTime;
+        var tempo = document.getElementById("tempo").value;
+
+    // テンポに基づいた四分音符の長さを計算
+        var quarterNoteTime = 60 / parseFloat(tempo); // テンポに応じた四分音符の時間
+        var eighthNoteTime = quarterNoteTime / 2;
+        var sixteenthNoteTime = quarterNoteTime / 4;
+
+        // 最初にC4の音を四分音符で再生
+        playNote(audioContext, currentTime, baseFrequency, quarterNoteTime);
+        currentTime += quarterNoteTime;
+
+        // 八分休符を追加
+        currentTime += eighthNoteTime;
+
+        // 1〜2文字目を八分音符で再生
+        for (var i = 0; i < 2; i++) {
+            var char = text.charAt(i).toUpperCase();
+            if (noteOffsets[char] !== undefined) {
+                var frequency = baseFrequency * Math.pow(2, noteOffsets[char] / 12);
+                playNote(audioContext, currentTime, frequency, eighthNoteTime);
+                currentTime += eighthNoteTime;
+            } else {
+                currentTime += eighthNoteTime;
+            }
+        }
+
+        // 3〜4文字目を16分音符で再生
+        for (var i = 2; i <= 3; i++) {
+            var char = text.charAt(i).toUpperCase();
+            if (noteOffsets[char] !== undefined) {
+                var frequency = baseFrequency * Math.pow(2, noteOffsets[char] / 12);
+                playNote(audioContext, currentTime, frequency, sixteenthNoteTime);
+                currentTime += sixteenthNoteTime;
+            } else {
+                currentTime += sixteenthNoteTime;
+            }
+        }
+
+        // 5文字目を四分音符で再生
+        var fifthChar = text.charAt(4).toUpperCase();
+        if (noteOffsets[fifthChar] !== undefined) {
+            var fifthFrequency = baseFrequency * Math.pow(2, noteOffsets[fifthChar] / 12);
+            playNote(audioContext, currentTime, fifthFrequency, quarterNoteTime);
+            currentTime += quarterNoteTime;
+        } else {
+            currentTime += quarterNoteTime;
+        }
+
+        // 6文字目を16分音符で再生
+        var sixthChar = text.charAt(5).toUpperCase();
+        if (noteOffsets[sixthChar] !== undefined) {
+            var sixthFrequency = baseFrequency * Math.pow(2, noteOffsets[sixthChar] / 12);
+            playNote(audioContext, currentTime, sixthFrequency, sixteenthNoteTime);
+            currentTime += sixteenthNoteTime;
+        } else {
+            currentTime += sixteenthNoteTime;
+        }
+
+        // 7文字目を八分音符で再生
+        var seventhChar = text.charAt(6).toUpperCase();
+        if (noteOffsets[seventhChar] !== undefined) {
+            var seventhFrequency = baseFrequency * Math.pow(2, noteOffsets[seventhChar] / 12);
+            playNote(audioContext, currentTime, seventhFrequency, eighthNoteTime);
+            currentTime += eighthNoteTime;
+        } else {
+            currentTime += eighthNoteTime;
+        }
+
+        // 8文字目を16分音符で再生
+        var eighthChar = text.charAt(7).toUpperCase();
+        if (noteOffsets[eighthChar] !== undefined) {
+            var eighthFrequency = baseFrequency * Math.pow(2, noteOffsets[eighthChar] / 12);
+            playNote(audioContext, currentTime, eighthFrequency, sixteenthNoteTime);
+            currentTime += sixteenthNoteTime;
+        } else {
+            currentTime += sixteenthNoteTime;
+        }
+
+        // 9〜10文字目を八分音符で再生
+        for (var i = 8; i < 10; i++) {
+            var char = text.charAt(i).toUpperCase();
+            if (noteOffsets[char] !== undefined) {
+                var frequency = baseFrequency * Math.pow(2, noteOffsets[char] / 12);
+                playNote(audioContext, currentTime, frequency, eighthNoteTime);
+                currentTime += eighthNoteTime;
+            } else {
+                currentTime += eighthNoteTime;
+            }
+        }
+
+        // 最後にC4の音を四分音符で再生
+        playNote(audioContext, currentTime, baseFrequency, quarterNoteTime);
+    }
+
+  
+    function generateMusicForElevenLetters() {
+        var text = document.getElementById("inputText").value;
+        var audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        var baseFrequency = 261.63; // C4の周波数
+      
+          // ユーザーが選択した音階の種類（普通かヨナ抜きか）を取得
+        var scaleType = document.getElementById("scaleType").value;
+
+      
+        // ユーザーが選択した音階を取得
+        var selectedScale = document.getElementById("key").value;
+        var baseFrequency = parseFloat(selectedScale); // 選択された音階の周波数
+
+     if (scaleType === "yonanuki") {
+        // ヨナ抜き音階 (例: Cヨナ抜きの場合、C, D, E, G, A)
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 7, 'E': 9, 'F': 12, 'G': 14,
+            'H': 0, 'I': 2, 'J': 4, 'K': 7, 'L': 9, 'M': 12, 'N': 14,
+            'O': 0, 'P': 2, 'Q': 4, 'R': 7, 'S': 9, 'T': 12, 'U': 14,
+            'V': 0, 'W': 2, 'X': 4, 'Y': 7, 'Z': 9};
+    } else if (scaleType === "ryukyu") {
+        // 琉球音階 (例: C琉球音階の場合、C, E, F, G, B)
+        noteOffsets = {'A': 0, 'B': 4, 'C': 5, 'D': 7, 'E': 11, 'F': 12, 'G': 16,
+            'H': 0, 'I': 4, 'J': 5, 'K': 7, 'L': 11, 'M': 12, 'N': 16,
+            'O': 0, 'P': 4, 'Q': 5, 'R': 7, 'S': 11, 'T': 12, 'U': 16,
+            'V': 0, 'W': 4, 'X': 5, 'Y': 7, 'Z': 11};
+    } else if(scaleType == "zenon"){
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 6, 'E': 8, 'F': 10, 'G': 12,
+            'H': 14, 'I': 16, 'J': 0, 'K': 2, 'L': 4, 'M': 6, 'N': 8,
+            'O': 10, 'P': 12, 'Q': 14, 'R': 16, 'S': 0, 'T': 2, 'U': 4,
+            'V': 6, 'W': 8, 'X': 10, 'Y': 12, 'Z': 14};        
+      
+    } else if(scaleType == "yonuki"){
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 7, 'E': 9, 'F': 11, 'G': 12,
+            'H': 14, 'I': 16, 'J': 0, 'K': 2, 'L': 4, 'M': 7, 'N': 9,
+            'O':11 , 'P': 12, 'Q': 14, 'R': 16, 'S': 0, 'T': 2, 'U': 4,
+            'V': 7, 'W': 9, 'X': 11, 'Y': 12, 'Z': 14
+        };
+      
+    }else if(scaleType=="roku"){
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 7, 'E': 11, 'F': 12, 'G': 14,
+            'H': 16, 'I': 0, 'J': 2, 'K': 4, 'L': 7, 'M': 11, 'N': 12,
+            'O': 14, 'P': 16, 'Q': 0, 'R': 2, 'S': 4, 'T': 7, 'U': 11,
+            'V': 12, 'W': 14, 'X': 16, 'Y': 0, 'Z': 2
+        };
+         } else if(scaleType=="minyo"){
+        noteOffsets = {'A': 0, 'B': 3, 'C': 5, 'D': 7, 'E': 10, 'F': 12, 'G': 0,
+            'H': 3, 'I': 5, 'J': 7, 'K': 10, 'L': 12, 'M': 0, 'N': 3,
+            'O': 5, 'P': 7, 'Q': 10, 'R': 12, 'S': 0, 'T': 3, 'U': 5,
+            'V': 7, 'W': 9, 'X': 12, 'Y': 0, 'Z': 3
+        };
+                   } else if(scaleType=="ritu"){
+        noteOffsets = {'A': 0, 'B': 2, 'C': 5, 'D': 7, 'E': 9, 'F': 12, 'G': 0,
+            'H': 2, 'I': 5, 'J': 7, 'K': 9, 'L': 12, 'M': 0, 'N': 2,
+            'O': 5, 'P': 7, 'Q': 9, 'R': 12, 'S': 0, 'T': 2, 'U': 5,
+            'V': 7, 'W': 9, 'X': 12, 'Y': 0, 'Z': 2
+        };
+    } else {
+        // 普通の音階
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 5, 'E': 7, 'F': 9, 'G': 11,
+            'H': 12, 'I': 14, 'J': 16, 'K': 0, 'L': 2, 'M': 4, 'N': 5,
+            'O': 7, 'P': 9, 'Q': 11, 'R': 12, 'S': 14, 'T': 16, 'U': 0,
+            'V': 2, 'W': 4, 'X': 5, 'Y': 7, 'Z': 9
+        };
+    }
+        var currentTime = audioContext.currentTime;
+        var tempo = document.getElementById("tempo").value;
+
+    // テンポに基づいた四分音符の長さを計算
+        var quarterNoteTime = 60 / parseFloat(tempo); // テンポに応じた四分音符の時間
+        var eighthNoteTime = quarterNoteTime / 2;
+        var sixteenthNoteTime = quarterNoteTime / 4;
+
+        // 最初にC4の音を四分音符で再生
+        playNote(audioContext, currentTime, baseFrequency, quarterNoteTime);
+        currentTime += quarterNoteTime;
+
+        // 八分休符を追加
+        currentTime += eighthNoteTime;
+
+        // 1文字目と2文字目を16分音符で再生
+        for (var i = 0; i < 2; i++) {
+            var char = text.charAt(i).toUpperCase();
+            if (noteOffsets[char] !== undefined) {
+                var frequency = baseFrequency * Math.pow(2, noteOffsets[char] / 12);
+                playNote(audioContext, currentTime, frequency, sixteenthNoteTime);
+                currentTime += sixteenthNoteTime;
+            } else {
+                currentTime += sixteenthNoteTime;
+            }
+        }
+
+        // 3文字目を八分音符で再生
+        var thirdChar = text.charAt(2).toUpperCase();
+        if (noteOffsets[thirdChar] !== undefined) {
+            var thirdFrequency = baseFrequency * Math.pow(2, noteOffsets[thirdChar] / 12);
+            playNote(audioContext, currentTime, thirdFrequency, eighthNoteTime);
+            currentTime += eighthNoteTime;
+        } else {
+            currentTime += eighthNoteTime;
+        }
+
+        // 4文字目と5文字目を16分音符で再生
+        for (var i = 3; i <= 4; i++) {
+            var char = text.charAt(i).toUpperCase();
+            if (noteOffsets[char] !== undefined) {
+                var frequency = baseFrequency * Math.pow(2, noteOffsets[char] / 12);
+                playNote(audioContext, currentTime, frequency, sixteenthNoteTime);
+                currentTime += sixteenthNoteTime;
+            } else {
+                currentTime += sixteenthNoteTime;
+            }
+        }
+
+        // 6文字目を四分音符で再生
+        var sixthChar = text.charAt(5).toUpperCase();
+        if (noteOffsets[sixthChar] !== undefined) {
+            var sixthFrequency = baseFrequency * Math.pow(2, noteOffsets[sixthChar] / 12);
+            playNote(audioContext, currentTime, sixthFrequency, quarterNoteTime);
+            currentTime += quarterNoteTime;
+        } else {
+            currentTime += quarterNoteTime;
+        }
+
+        // 7文字目を16分音符で再生
+        var seventhChar = text.charAt(6).toUpperCase();
+        if (noteOffsets[seventhChar] !== undefined) {
+            var seventhFrequency = baseFrequency * Math.pow(2, noteOffsets[seventhChar] / 12);
+            playNote(audioContext, currentTime, seventhFrequency, sixteenthNoteTime);
+            currentTime += sixteenthNoteTime;
+        } else {
+            currentTime += sixteenthNoteTime;
+        }
+
+        // 8文字目を八分音符で再生
+        var eighthChar = text.charAt(7).toUpperCase();
+        if (noteOffsets[eighthChar] !== undefined) {
+            var eighthFrequency = baseFrequency * Math.pow(2, noteOffsets[eighthChar] / 12);
+            playNote(audioContext, currentTime, eighthFrequency, eighthNoteTime);
+            currentTime += eighthNoteTime;
+        } else {
+            currentTime += eighthNoteTime;
+        }
+
+        // 9文字目を16分音符で再生
+        var ninthChar = text.charAt(8).toUpperCase();
+        if (noteOffsets[ninthChar] !== undefined) {
+            var ninthFrequency = baseFrequency * Math.pow(2, noteOffsets[ninthChar] / 12);
+            playNote(audioContext, currentTime, ninthFrequency, sixteenthNoteTime);
+            currentTime += sixteenthNoteTime;
+        } else {
+            currentTime += sixteenthNoteTime;
+        }
+
+        // 10文字目と11文字目を八分音符で再生
+        for (var i = 9; i < 11; i++) {
+            var char = text.charAt(i).toUpperCase();
+            if (noteOffsets[char] !== undefined) {
+                var frequency = baseFrequency * Math.pow(2, noteOffsets[char] / 12);
+                playNote(audioContext, currentTime, frequency, eighthNoteTime);
+                currentTime += eighthNoteTime;
+            } else {
+                currentTime += eighthNoteTime;
+            }
+        }
+
+        // 最後にC4の音を四分音符で再生
+        playNote(audioContext, currentTime, baseFrequency, quarterNoteTime);
+    }
+
+    function generateMusicForTwelveLetters() {
+        var text = document.getElementById("inputText").value;
+        var audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        var baseFrequency = 261.63; // C4の周波数
+      
+          // ユーザーが選択した音階の種類（普通かヨナ抜きか）を取得
+        var scaleType = document.getElementById("scaleType").value;
+      
+        // ユーザーが選択した音階を取得
+        var selectedScale = document.getElementById("key").value;
+        var baseFrequency = parseFloat(selectedScale); // 選択された音階の周波数
+
+     if (scaleType === "yonanuki") {
+        // ヨナ抜き音階 (例: Cヨナ抜きの場合、C, D, E, G, A)
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 7, 'E': 9, 'F': 12, 'G': 14,
+            'H': 0, 'I': 2, 'J': 4, 'K': 7, 'L': 9, 'M': 12, 'N': 14,
+            'O': 0, 'P': 2, 'Q': 4, 'R': 7, 'S': 9, 'T': 12, 'U': 14,
+            'V': 0, 'W': 2, 'X': 4, 'Y': 7, 'Z': 9};
+    } else if (scaleType === "ryukyu") {
+        // 琉球音階 (例: C琉球音階の場合、C, E, F, G, B)
+        noteOffsets = {'A': 0, 'B': 4, 'C': 5, 'D': 7, 'E': 11, 'F': 12, 'G': 16,
+            'H': 0, 'I': 4, 'J': 5, 'K': 7, 'L': 11, 'M': 12, 'N': 16,
+            'O': 0, 'P': 4, 'Q': 5, 'R': 7, 'S': 11, 'T': 12, 'U': 16,
+            'V': 0, 'W': 4, 'X': 5, 'Y': 7, 'Z': 11};
+    }else if(scaleType == "zenon"){
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 6, 'E': 8, 'F': 10, 'G': 12,
+            'H': 14, 'I': 16, 'J': 0, 'K': 2, 'L': 4, 'M': 6, 'N': 8,
+            'O': 10, 'P': 12, 'Q': 14, 'R': 16, 'S': 0, 'T': 2, 'U': 4,
+            'V': 6, 'W': 8, 'X': 10, 'Y': 12, 'Z': 14};        
+      
+    } else if(scaleType == "yonuki"){
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 7, 'E': 9, 'F': 11, 'G': 12,
+            'H': 14, 'I': 16, 'J': 0, 'K': 2, 'L': 4, 'M': 7, 'N': 9,
+            'O':11 , 'P': 12, 'Q': 14, 'R': 16, 'S': 0, 'T': 2, 'U': 4,
+            'V': 7, 'W': 9, 'X': 11, 'Y': 12, 'Z': 14
+        };
+      
+    }else if(scaleType=="roku"){
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 7, 'E': 11, 'F': 12, 'G': 14,
+            'H': 16, 'I': 0, 'J': 2, 'K': 4, 'L': 7, 'M': 11, 'N': 12,
+            'O': 14, 'P': 16, 'Q': 0, 'R': 2, 'S': 4, 'T': 7, 'U': 11,
+            'V': 12, 'W': 14, 'X': 16, 'Y': 0, 'Z': 2
+        };
+         } else if(scaleType=="minyo"){
+        noteOffsets = {'A': 0, 'B': 3, 'C': 5, 'D': 7, 'E': 10, 'F': 12, 'G': 0,
+            'H': 3, 'I': 5, 'J': 7, 'K': 10, 'L': 12, 'M': 0, 'N': 3,
+            'O': 5, 'P': 7, 'Q': 10, 'R': 12, 'S': 0, 'T': 3, 'U': 5,
+            'V': 7, 'W': 9, 'X': 12, 'Y': 0, 'Z': 3
+        };
+                   } else if(scaleType=="ritu"){
+        noteOffsets = {'A': 0, 'B': 2, 'C': 5, 'D': 7, 'E': 9, 'F': 12, 'G': 0,
+            'H': 2, 'I': 5, 'J': 7, 'K': 9, 'L': 12, 'M': 0, 'N': 2,
+            'O': 5, 'P': 7, 'Q': 9, 'R': 12, 'S': 0, 'T': 2, 'U': 5,
+            'V': 7, 'W': 9, 'X': 12, 'Y': 0, 'Z': 2
+        };
+    } else {
+        // 普通の音階
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 5, 'E': 7, 'F': 9, 'G': 11,
+            'H': 12, 'I': 14, 'J': 16, 'K': 0, 'L': 2, 'M': 4, 'N': 5,
+            'O': 7, 'P': 9, 'Q': 11, 'R': 12, 'S': 14, 'T': 16, 'U': 0,
+            'V': 2, 'W': 4, 'X': 5, 'Y': 7, 'Z': 9
+        };
+    }
+        var currentTime = audioContext.currentTime;
+        var tempo = document.getElementById("tempo").value;
+
+    // テンポに基づいた四分音符の長さを計算
+        var quarterNoteTime = 60 / parseFloat(tempo); // テンポに応じた四分音符の時間
+        var eighthNoteTime = quarterNoteTime / 2;
+        var sixteenthNoteTime = quarterNoteTime / 4;
+
+        // 最初にC4の音を四分音符で再生
+        playNote(audioContext, currentTime, baseFrequency, quarterNoteTime);
+        currentTime += quarterNoteTime;
+
+        // 八分休符を追加
+        currentTime += eighthNoteTime;
+
+        // 1〜2文字目を八分音符で再生
+        for (var i = 0; i < 2; i++) {
+            var char = text.charAt(i).toUpperCase();
+            if (noteOffsets[char] !== undefined) {
+                var frequency = baseFrequency * Math.pow(2, noteOffsets[char] / 12);
+                playNote(audioContext, currentTime, frequency, eighthNoteTime);
+                currentTime += eighthNoteTime;
+            } else {
+                currentTime += eighthNoteTime;
+            }
+        }
+
+        // 3〜4文字目を16分音符で再生
+        for (var i = 2; i <= 3; i++) {
+            var char = text.charAt(i).toUpperCase();
+            if (noteOffsets[char] !== undefined) {
+                var frequency = baseFrequency * Math.pow(2, noteOffsets[char] / 12);
+                playNote(audioContext, currentTime, frequency, sixteenthNoteTime);
+                currentTime += sixteenthNoteTime;
+            } else {
+                currentTime += sixteenthNoteTime;
+            }
+        }
+
+        // 5文字目を四分音符で再生
+        var fifthChar = text.charAt(4).toUpperCase();
+        if (noteOffsets[fifthChar] !== undefined) {
+            var fifthFrequency = baseFrequency * Math.pow(2, noteOffsets[fifthChar] / 12);
+            playNote(audioContext, currentTime, fifthFrequency, quarterNoteTime);
+            currentTime += quarterNoteTime;
+        } else {
+            currentTime += quarterNoteTime;
+        }
+
+        // 6文字目を16分音符で再生
+        var sixthChar = text.charAt(5).toUpperCase();
+        if (noteOffsets[sixthChar] !== undefined) {
+            var sixthFrequency = baseFrequency * Math.pow(2, noteOffsets[sixthChar] / 12);
+            playNote(audioContext, currentTime, sixthFrequency, sixteenthNoteTime);
+            currentTime += sixteenthNoteTime;
+        } else {
+            currentTime += sixteenthNoteTime;
+        }
+
+        // 7文字目を八分音符で再生
+        var seventhChar = text.charAt(6).toUpperCase();
+        if (noteOffsets[seventhChar] !== undefined) {
+            var seventhFrequency = baseFrequency * Math.pow(2, noteOffsets[seventhChar] / 12);
+            playNote(audioContext, currentTime, seventhFrequency, eighthNoteTime);
+            currentTime += eighthNoteTime;
+        } else {
+            currentTime += eighthNoteTime;
+        }
+
+        // 8文字目を16分音符で再生
+        var eighthChar = text.charAt(7).toUpperCase();
+        if (noteOffsets[eighthChar] !== undefined) {
+            var eighthFrequency = baseFrequency * Math.pow(2, noteOffsets[eighthChar] / 12);
+            playNote(audioContext, currentTime, eighthFrequency, sixteenthNoteTime);
+            currentTime += sixteenthNoteTime;
+        } else {
+            currentTime += sixteenthNoteTime;
+        }
+
+        // 9〜10文字目を八分音符で再生
+        for (var i = 8; i < 10; i++) {
+            var char = text.charAt(i).toUpperCase();
+            if (noteOffsets[char] !== undefined) {
+                var frequency = baseFrequency * Math.pow(2, noteOffsets[char] / 12);
+                playNote(audioContext, currentTime, frequency, eighthNoteTime);
+                currentTime += eighthNoteTime;
+            } else {
+                currentTime += eighthNoteTime;
+            }
+        }
+
+        // 最後にC4の音を四分音符で再生
+        playNote(audioContext, currentTime, baseFrequency, quarterNoteTime);
+    }
+
+    function generateMusicForElevenLetters() {
+        var text = document.getElementById("inputText").value;
+        var audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        var baseFrequency = 261.63; // C4の周波数
+      
+          // ユーザーが選択した音階の種類（普通かヨナ抜きか）を取得
+        var scaleType = document.getElementById("scaleType").value;
+
+      
+        // ユーザーが選択した音階を取得
+        var selectedScale = document.getElementById("key").value;
+        var baseFrequency = parseFloat(selectedScale); // 選択された音階の周波数
+
+     if (scaleType === "yonanuki") {
+        // ヨナ抜き音階 (例: Cヨナ抜きの場合、C, D, E, G, A)
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 7, 'E': 9, 'F': 12, 'G': 14,
+            'H': 0, 'I': 2, 'J': 4, 'K': 7, 'L': 9, 'M': 12, 'N': 14,
+            'O': 0, 'P': 2, 'Q': 4, 'R': 7, 'S': 9, 'T': 12, 'U': 14,
+            'V': 0, 'W': 2, 'X': 4, 'Y': 7, 'Z': 9};
+    } else if (scaleType === "ryukyu") {
+        // 琉球音階 (例: C琉球音階の場合、C, E, F, G, B)
+        noteOffsets = {'A': 0, 'B': 4, 'C': 5, 'D': 7, 'E': 11, 'F': 12, 'G': 16,
+            'H': 0, 'I': 4, 'J': 5, 'K': 7, 'L': 11, 'M': 12, 'N': 16,
+            'O': 0, 'P': 4, 'Q': 5, 'R': 7, 'S': 11, 'T': 12, 'U': 16,
+            'V': 0, 'W': 4, 'X': 5, 'Y': 7, 'Z': 11};
+    }else if(scaleType == "yonuki"){
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 7, 'E': 9, 'F': 11, 'G': 12,
+            'H': 14, 'I': 16, 'J': 0, 'K': 2, 'L': 4, 'M': 7, 'N': 9,
+            'O':11 , 'P': 12, 'Q': 14, 'R': 16, 'S': 0, 'T': 2, 'U': 4,
+            'V': 7, 'W': 9, 'X': 11, 'Y': 12, 'Z': 14
+        };
+      
+    }else if(scaleType=="roku"){
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 7, 'E': 11, 'F': 12, 'G': 14,
+            'H': 16, 'I': 0, 'J': 2, 'K': 4, 'L': 7, 'M': 11, 'N': 12,
+            'O': 14, 'P': 16, 'Q': 0, 'R': 2, 'S': 4, 'T': 7, 'U': 11,
+            'V': 12, 'W': 14, 'X': 16, 'Y': 0, 'Z': 2
+        };
+         } else if(scaleType=="minyo"){
+        noteOffsets = {'A': 0, 'B': 3, 'C': 5, 'D': 7, 'E': 10, 'F': 12, 'G': 0,
+            'H': 3, 'I': 5, 'J': 7, 'K': 10, 'L': 12, 'M': 0, 'N': 3,
+            'O': 5, 'P': 7, 'Q': 10, 'R': 12, 'S': 0, 'T': 3, 'U': 5,
+            'V': 7, 'W': 9, 'X': 12, 'Y': 0, 'Z': 3
+        };
+                   } else if(scaleType=="ritu"){
+        noteOffsets = {'A': 0, 'B': 2, 'C': 5, 'D': 7, 'E': 9, 'F': 12, 'G': 0,
+            'H': 2, 'I': 5, 'J': 7, 'K': 9, 'L': 12, 'M': 0, 'N': 2,
+            'O': 5, 'P': 7, 'Q': 9, 'R': 12, 'S': 0, 'T': 2, 'U': 5,
+            'V': 7, 'W': 9, 'X': 12, 'Y': 0, 'Z': 2
+        };
+    } else {
+        // 普通の音階
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 5, 'E': 7, 'F': 9, 'G': 11,
+            'H': 12, 'I': 14, 'J': 16, 'K': 0, 'L': 2, 'M': 4, 'N': 5,
+            'O': 7, 'P': 9, 'Q': 11, 'R': 12, 'S': 14, 'T': 16, 'U': 0,
+            'V': 2, 'W': 4, 'X': 5, 'Y': 7, 'Z': 9
+        };
+    }
+        var currentTime = audioContext.currentTime;
+        var tempo = document.getElementById("tempo").value;
+
+    // テンポに基づいた四分音符の長さを計算
+        var quarterNoteTime = 60 / parseFloat(tempo); // テンポに応じた四分音符の時間
+        var eighthNoteTime = quarterNoteTime / 2;
+        var sixteenthNoteTime = quarterNoteTime / 4;
+
+        // 最初にC4の音を四分音符で再生
+        playNote(audioContext, currentTime, baseFrequency, quarterNoteTime);
+        currentTime += quarterNoteTime;
+
+        // 八分休符を追加
+        currentTime += eighthNoteTime;
+
+        // 1文字目と2文字目を16分音符で再生
+        for (var i = 0; i < 2; i++) {
+            var char = text.charAt(i).toUpperCase();
+            if (noteOffsets[char] !== undefined) {
+                var frequency = baseFrequency * Math.pow(2, noteOffsets[char] / 12);
+                playNote(audioContext, currentTime, frequency, sixteenthNoteTime);
+                currentTime += sixteenthNoteTime;
+            } else {
+                currentTime += sixteenthNoteTime;
+            }
+        }
+
+        // 3文字目を八分音符で再生
+        var thirdChar = text.charAt(2).toUpperCase();
+        if (noteOffsets[thirdChar] !== undefined) {
+            var thirdFrequency = baseFrequency * Math.pow(2, noteOffsets[thirdChar] / 12);
+            playNote(audioContext, currentTime, thirdFrequency, eighthNoteTime);
+            currentTime += eighthNoteTime;
+        } else {
+            currentTime += eighthNoteTime;
+        }
+
+        // 4文字目と5文字目を16分音符で再生
+        for (var i = 3; i <= 4; i++) {
+            var char = text.charAt(i).toUpperCase();
+            if (noteOffsets[char] !== undefined) {
+                var frequency = baseFrequency * Math.pow(2, noteOffsets[char] / 12);
+                playNote(audioContext, currentTime, frequency, sixteenthNoteTime);
+                currentTime += sixteenthNoteTime;
+            } else {
+                currentTime += sixteenthNoteTime;
+            }
+        }
+
+        // 6文字目を四分音符で再生
+        var sixthChar = text.charAt(5).toUpperCase();
+        if (noteOffsets[sixthChar] !== undefined) {
+            var sixthFrequency = baseFrequency * Math.pow(2, noteOffsets[sixthChar] / 12);
+            playNote(audioContext, currentTime, sixthFrequency, quarterNoteTime);
+            currentTime += quarterNoteTime;
+        } else {
+            currentTime += quarterNoteTime;
+        }
+
+        // 7文字目を16分音符で再生
+        var seventhChar = text.charAt(6).toUpperCase();
+        if (noteOffsets[seventhChar] !== undefined) {
+            var seventhFrequency = baseFrequency * Math.pow(2, noteOffsets[seventhChar] / 12);
+            playNote(audioContext, currentTime, seventhFrequency, sixteenthNoteTime);
+            currentTime += sixteenthNoteTime;
+        } else {
+            currentTime += sixteenthNoteTime;
+        }
+
+        // 8文字目を八分音符で再生
+        var eighthChar = text.charAt(7).toUpperCase();
+        if (noteOffsets[eighthChar] !== undefined) {
+            var eighthFrequency = baseFrequency * Math.pow(2, noteOffsets[eighthChar] / 12);
+            playNote(audioContext, currentTime, eighthFrequency, eighthNoteTime);
+            currentTime += eighthNoteTime;
+        } else {
+            currentTime += eighthNoteTime;
+        }
+
+        // 9文字目を16分音符で再生
+        var ninthChar = text.charAt(8).toUpperCase();
+        if (noteOffsets[ninthChar] !== undefined) {
+            var ninthFrequency = baseFrequency * Math.pow(2, noteOffsets[ninthChar] / 12);
+            playNote(audioContext, currentTime, ninthFrequency, sixteenthNoteTime);
+            currentTime += sixteenthNoteTime;
+        } else {
+            currentTime += sixteenthNoteTime;
+        }
+
+        // 10文字目と11文字目を八分音符で再生
+        for (var i = 9; i < 11; i++) {
+            var char = text.charAt(i).toUpperCase();
+            if (noteOffsets[char] !== undefined) {
+                var frequency = baseFrequency * Math.pow(2, noteOffsets[char] / 12);
+                playNote(audioContext, currentTime, frequency, eighthNoteTime);
+                currentTime += eighthNoteTime;
+            } else {
+                currentTime += eighthNoteTime;
+            }
+        }
+
+        // 最後にC4の音を四分音符で再生
+        playNote(audioContext, currentTime, baseFrequency, quarterNoteTime);
+    }
+
+    function generateMusicForTwelveLetters() {
+        var text = document.getElementById("inputText").value;
+        var audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        var baseFrequency = 261.63; // C4の周波数
+      
+          // ユーザーが選択した音階の種類（普通かヨナ抜きか）を取得
+        var scaleType = document.getElementById("scaleType").value;
+
+      
+        // ユーザーが選択した音階を取得
+        var selectedScale = document.getElementById("key").value;
+        var baseFrequency = parseFloat(selectedScale); // 選択された音階の周波数
+
+     if (scaleType === "yonanuki") {
+        // ヨナ抜き音階 (例: Cヨナ抜きの場合、C, D, E, G, A)
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 7, 'E': 9, 'F': 12, 'G': 14,
+            'H': 0, 'I': 2, 'J': 4, 'K': 7, 'L': 9, 'M': 12, 'N': 14,
+            'O': 0, 'P': 2, 'Q': 4, 'R': 7, 'S': 9, 'T': 12, 'U': 14,
+            'V': 0, 'W': 2, 'X': 4, 'Y': 7, 'Z': 9};
+    }else if(scaleType == "yonuki"){
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 7, 'E': 9, 'F': 11, 'G': 12,
+            'H': 14, 'I': 16, 'J': 0, 'K': 2, 'L': 4, 'M': 7, 'N': 9,
+            'O':11 , 'P': 12, 'Q': 14, 'R': 16, 'S': 0, 'T': 2, 'U': 4,
+            'V': 7, 'W': 9, 'X': 11, 'Y': 12, 'Z': 14
+        };
+      
+    } else if (scaleType === "ryukyu") {
+        // 琉球音階 (例: C琉球音階の場合、C, E, F, G, B)
+        noteOffsets = {'A': 0, 'B': 4, 'C': 5, 'D': 7, 'E': 11, 'F': 12, 'G': 16,
+            'H': 0, 'I': 4, 'J': 5, 'K': 7, 'L': 11, 'M': 12, 'N': 16,
+            'O': 0, 'P': 4, 'Q': 5, 'R': 7, 'S': 11, 'T': 12, 'U': 16,
+            'V': 0, 'W': 4, 'X': 5, 'Y': 7, 'Z': 11};
+    }else if(scaleType=="roku"){
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 7, 'E': 11, 'F': 12, 'G': 14,
+            'H': 16, 'I': 0, 'J': 2, 'K': 4, 'L': 7, 'M': 11, 'N': 12,
+            'O': 14, 'P': 16, 'Q': 0, 'R': 2, 'S': 4, 'T': 7, 'U': 11,
+            'V': 12, 'W': 14, 'X': 16, 'Y': 0, 'Z': 2
+        };
+         } else if(scaleType=="minyo"){
+        noteOffsets = {'A': 0, 'B': 3, 'C': 5, 'D': 7, 'E': 10, 'F': 12, 'G': 0,
+            'H': 3, 'I': 5, 'J': 7, 'K': 10, 'L': 12, 'M': 0, 'N': 3,
+            'O': 5, 'P': 7, 'Q': 10, 'R': 12, 'S': 0, 'T': 3, 'U': 5,
+            'V': 7, 'W': 9, 'X': 12, 'Y': 0, 'Z': 3
+        };
+                   } else if(scaleType=="ritu"){
+        noteOffsets = {'A': 0, 'B': 2, 'C': 5, 'D': 7, 'E': 9, 'F': 12, 'G': 0,
+            'H': 2, 'I': 5, 'J': 7, 'K': 9, 'L': 12, 'M': 0, 'N': 2,
+            'O': 5, 'P': 7, 'Q': 9, 'R': 12, 'S': 0, 'T': 2, 'U': 5,
+            'V': 7, 'W': 9, 'X': 12, 'Y': 0, 'Z': 2
+        };
+    } else {
+        // 普通の音階
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 5, 'E': 7, 'F': 9, 'G': 11,
+            'H': 12, 'I': 14, 'J': 16, 'K': 0, 'L': 2, 'M': 4, 'N': 5,
+            'O': 7, 'P': 9, 'Q': 11, 'R': 12, 'S': 14, 'T': 16, 'U': 0,
+            'V': 2, 'W': 4, 'X': 5, 'Y': 7, 'Z': 9
+        };
+    }
+        var currentTime = audioContext.currentTime;
+        var tempo = document.getElementById("tempo").value;
+
+    // テンポに基づいた四分音符の長さを計算
+        var quarterNoteTime = 60 / parseFloat(tempo); // テンポに応じた四分音符の時間
+        var eighthNoteTime = quarterNoteTime / 2;
+        var sixteenthNoteTime = quarterNoteTime / 4;
+
+        // 最初にC4の音を四分音符で再生
+        playNote(audioContext, currentTime, baseFrequency, quarterNoteTime);
+        currentTime += quarterNoteTime;
+
+        // 八分休符を追加
+        currentTime += eighthNoteTime;
+
+        // 1〜2文字目を八分音符で再生
+        for (var i = 0; i < 2; i++) {
+            var char = text.charAt(i).toUpperCase();
+            if (noteOffsets[char] !== undefined) {
+                var frequency = baseFrequency * Math.pow(2, noteOffsets[char] / 12);
+                playNote(audioContext, currentTime, frequency, eighthNoteTime);
+                currentTime += eighthNoteTime;
+            } else {
+                currentTime += eighthNoteTime;
+            }
+        }
+
+        // 3〜4文字目を16分音符で再生
+        for (var i = 2; i <= 3; i++) {
+            var char = text.charAt(i).toUpperCase();
+            if (noteOffsets[char] !== undefined) {
+                var frequency = baseFrequency * Math.pow(2, noteOffsets[char] / 12);
+                playNote(audioContext, currentTime, frequency, sixteenthNoteTime);
+                currentTime += sixteenthNoteTime;
+            } else {
+                currentTime += sixteenthNoteTime;
+            }
+        }
+
+        // 5文字目を四分音符で再生
+        var fifthChar = text.charAt(4).toUpperCase();
+        if (noteOffsets[fifthChar] !== undefined) {
+            var fifthFrequency = baseFrequency * Math.pow(2, noteOffsets[fifthChar] / 12);
+            playNote(audioContext, currentTime, fifthFrequency, quarterNoteTime);
+            currentTime += quarterNoteTime;
+        } else {
+            currentTime += quarterNoteTime;
+        }
+
+        // 6文字目を16分音符で再生
+        var sixthChar = text.charAt(5).toUpperCase();
+        if (noteOffsets[sixthChar] !== undefined) {
+            var sixthFrequency = baseFrequency * Math.pow(2, noteOffsets[sixthChar] / 12);
+            playNote(audioContext, currentTime, sixthFrequency, sixteenthNoteTime);
+            currentTime += sixteenthNoteTime;
+        } else {
+            currentTime += sixteenthNoteTime;
+        }
+
+        // 7文字目を八分音符で再生
+        var seventhChar = text.charAt(6).toUpperCase();
+        if (noteOffsets[seventhChar] !== undefined) {
+            var seventhFrequency = baseFrequency * Math.pow(2, noteOffsets[seventhChar] / 12);
+            playNote(audioContext, currentTime, seventhFrequency, eighthNoteTime);
+            currentTime += eighthNoteTime;
+        } else {
+            currentTime += eighthNoteTime;
+        }
+
+        // 8文字目を16分音符で再生
+        var eighthChar = text.charAt(7).toUpperCase();
+        if (noteOffsets[eighthChar] !== undefined) {
+            var eighthFrequency = baseFrequency * Math.pow(2, noteOffsets[eighthChar] / 12);
+            playNote(audioContext, currentTime, eighthFrequency, sixteenthNoteTime);
+            currentTime += sixteenthNoteTime;
+        } else {
+            currentTime += sixteenthNoteTime;
+        }
+
+        // 9〜10文字目を八分音符で再生
+        for (var i = 8; i < 10; i++) {
+            var char = text.charAt(i).toUpperCase();
+            if (noteOffsets[char] !== undefined) {
+                var frequency = baseFrequency * Math.pow(2, noteOffsets[char] / 12);
+                playNote(audioContext, currentTime, frequency, eighthNoteTime);
+                currentTime += eighthNoteTime;
+            } else {
+                currentTime += eighthNoteTime;
+            }
+        }
+
+        // 最後にC4の音を四分音符で再生
+        playNote(audioContext, currentTime, baseFrequency, quarterNoteTime);
+    }
+
+    function generateMusicForThirteenLetters() {
+        var text = document.getElementById("inputText").value;
+        if (text.length !== 13) {
+            console.error("generateMusicForThirteenLetters関数は13文字の入力にのみ対応しています。");
+            return;
+        }
+
+        var audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        var baseFrequency = 261.626; // C4の周波数
+      
+     // ユーザーが選択した音階の種類（普通かヨナ抜きか）を取得
+        var scaleType = document.getElementById("scaleType").value;
+        // ユーザーが選択した高さを取得
+        var selectedScale = document.getElementById("key").value;
+        var baseFrequency = parseFloat(selectedScale); // 選択された音階の周波数
+
+     if (scaleType === "yonanuki") {
+        // ヨナ抜き音階 (例: Cヨナ抜きの場合、C, D, E, G, A)
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 7, 'E': 9, 'F': 12, 'G': 14,
+            'H': 0, 'I': 2, 'J': 4, 'K': 7, 'L': 9, 'M': 12, 'N': 14,
+            'O': 0, 'P': 2, 'Q': 4, 'R': 7, 'S': 9, 'T': 12, 'U': 14,
+            'V': 0, 'W': 2, 'X': 4, 'Y': 7, 'Z': 9};
+    } else if (scaleType === "ryukyu") {
+        // 琉球音階 (例: C琉球音階の場合、C, E, F, G, B)
+        noteOffsets = {'A': 0, 'B': 4, 'C': 5, 'D': 7, 'E': 11, 'F': 12, 'G': 16,
+            'H': 0, 'I': 4, 'J': 5, 'K': 7, 'L': 11, 'M': 12, 'N': 16,
+            'O': 0, 'P': 4, 'Q': 5, 'R': 7, 'S': 11, 'T': 12, 'U': 16,
+            'V': 0, 'W': 4, 'X': 5, 'Y': 7, 'Z': 11};
+    } else if(scaleType == "yonuki"){
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 7, 'E': 9, 'F': 11, 'G': 12,
+            'H': 14, 'I': 16, 'J': 0, 'K': 2, 'L': 4, 'M': 7, 'N': 9,
+            'O':11 , 'P': 12, 'Q': 14, 'R': 16, 'S': 0, 'T': 2, 'U': 4,
+            'V': 7, 'W': 9, 'X': 11, 'Y': 12, 'Z': 14
+        };
+      
+    }else if(scaleType=="roku"){
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 7, 'E': 11, 'F': 12, 'G': 14,
+            'H': 16, 'I': 0, 'J': 2, 'K': 4, 'L': 7, 'M': 11, 'N': 12,
+            'O': 14, 'P': 16, 'Q': 0, 'R': 2, 'S': 4, 'T': 7, 'U': 11,
+            'V': 12, 'W': 14, 'X': 16, 'Y': 0, 'Z': 2
+        };
+         } else if(scaleType=="minyo"){
+        noteOffsets = {'A': 0, 'B': 3, 'C': 5, 'D': 7, 'E': 10, 'F': 12, 'G': 0,
+            'H': 3, 'I': 5, 'J': 7, 'K': 10, 'L': 12, 'M': 0, 'N': 3,
+            'O': 5, 'P': 7, 'Q': 10, 'R': 12, 'S': 0, 'T': 3, 'U': 5,
+            'V': 7, 'W': 9, 'X': 12, 'Y': 0, 'Z': 3
+        };
+                   } else if(scaleType=="ritu"){
+        noteOffsets = {'A': 0, 'B': 2, 'C': 5, 'D': 7, 'E': 9, 'F': 12, 'G': 0,
+            'H': 2, 'I': 5, 'J': 7, 'K': 9, 'L': 12, 'M': 0, 'N': 2,
+            'O': 5, 'P': 7, 'Q': 9, 'R': 12, 'S': 0, 'T': 2, 'U': 5,
+            'V': 7, 'W': 9, 'X': 12, 'Y': 0, 'Z': 2
+        };
+    } else {
+        // 普通の音階
+        noteOffsets = {'A': 0, 'B': 2, 'C': 4, 'D': 5, 'E': 7, 'F': 9, 'G': 11,
+            'H': 12, 'I': 14, 'J': 16, 'K': 0, 'L': 2, 'M': 4, 'N': 5,
+            'O': 7, 'P': 9, 'Q': 11, 'R': 12, 'S': 14, 'T': 16, 'U': 0,
+            'V': 2, 'W': 4, 'X': 5, 'Y': 7, 'Z': 9
+        };
+    }
+        var currentTime = audioContext.currentTime;
+        var tempo = document.getElementById("tempo").value;
+    // テンポに基づいた四分音符の長さを計算
+        var quarterNoteTime = 60 / parseFloat(tempo); // テンポに応じた四分音符の時間
+        var eighthNoteTime = quarterNoteTime / 2;
+        var sixteenthNoteTime = quarterNoteTime / 4;
+
+        // 最初にC4の音を四分音符で再生
+        playNote(audioContext, currentTime, baseFrequency, quarterNoteTime);
+        currentTime += quarterNoteTime;
+        // 1文字目を八分音符で再生
+        var firstChar = text.charAt(0).toUpperCase();
+        if (noteOffsets[firstChar] !== undefined) {
+            var firstFrequency = baseFrequency * Math.pow(2, noteOffsets[firstChar] / 12);
+            playNote(audioContext, currentTime, firstFrequency, eighthNoteTime);
+            currentTime += eighthNoteTime;
+        } else {
+            currentTime += eighthNoteTime;
+        }
+        // 2文字目・3文字目を16分音符で再生
+        for (var i = 1; i <= 2; i++) {
+            var char = text.charAt(i).toUpperCase();
+            if (noteOffsets[char] !== undefined) {
+                var frequency = baseFrequency * Math.pow(2, noteOffsets[char] / 12);
+                playNote(audioContext, currentTime, frequency, sixteenthNoteTime);
+                currentTime += sixteenthNoteTime;
+            } else {
+                currentTime += sixteenthNoteTime;
+            }
+        }
+        // 4文字目を16分音符で再生
+        var fourthChar = text.charAt(3).toUpperCase();
+        if (noteOffsets[fourthChar] !== undefined) {
+            var fourthFrequency = baseFrequency * Math.pow(2, noteOffsets[fourthChar] / 12);
+            playNote(audioContext, currentTime, fourthFrequency, sixteenthNoteTime);
+            currentTime += sixteenthNoteTime;
+        } else {
+            currentTime += sixteenthNoteTime;
+        }
+        // 5文字目を八分音符で再生
+        var fifthChar = text.charAt(4).toUpperCase();
+        if (noteOffsets[fifthChar] !== undefined) {
+            var fifthFrequency = baseFrequency * Math.pow(2, noteOffsets[fifthChar] / 12);
+            playNote(audioContext, currentTime, fifthFrequency, eighthNoteTime);
+            currentTime += eighthNoteTime;
+        } else {
+            currentTime += eighthNoteTime;
+        }
+        // 6文字目を16分音符で再生
+        var sixthChar = text.charAt(5).toUpperCase();
+        if (noteOffsets[sixthChar] !== undefined) {
+            var sixthFrequency = baseFrequency * Math.pow(2, noteOffsets[sixthChar] / 12);
+            playNote(audioContext, currentTime, sixthFrequency, sixteenthNoteTime);
+            currentTime += sixteenthNoteTime;
+        } else {
+            currentTime += sixteenthNoteTime;
+        }
+        // 7〜8文字目を四分音符で再生
+        for (var i = 6; i <= 7; i++) {
+            var char = text.charAt(i).toUpperCase();
+            if (noteOffsets[char] !== undefined) {
+                var frequency = baseFrequency * Math.pow(2, noteOffsets[char] / 12);
+                playNote(audioContext, currentTime, frequency, quarterNoteTime);
+                currentTime += quarterNoteTime;
+            } else {
+                currentTime += quarterNoteTime;
+            }
+        }
+        // 9〜12文字目を16分音符で再生
+        for (var i = 8; i < 12; i++) {
+            var char = text.charAt(i).toUpperCase();
+            if (noteOffsets[char] !== undefined) {
+                var frequency = baseFrequency * Math.pow(2, noteOffsets[char] / 12);
+                playNote(audioContext, currentTime, frequency, sixteenthNoteTime);
+                currentTime += sixteenthNoteTime;
+            } else {
+                currentTime += sixteenthNoteTime;
+            }
+        }
+        // 13文字目を八分音符で再生
+        var thirteenthChar = text.charAt(12).toUpperCase();
+        if (noteOffsets[thirteenthChar] !== undefined) {
+            var thirteenthFrequency = baseFrequency * Math.pow(2, noteOffsets[thirteenthChar] / 12);
+            playNote(audioContext, currentTime, thirteenthFrequency, eighthNoteTime);
+            currentTime += eighthNoteTime;
+        } else {
+            currentTime += eighthNoteTime;
+        }
+        // 最後にC4の音を四分音符で再生
+        playNote(audioContext, currentTime, baseFrequency, quarterNoteTime);
+    }
+  
+  
+
+    function playNote(audioContext, currentTime, frequency, duration) {
+        const selectedWaveform = document.getElementById('waveform').value;
+      
+        var oscillator = audioContext.createOscillator();
+        var gainNode = audioContext.createGain();
+
+        oscillator.type = selectedWaveform;
+        oscillator.frequency.value = frequency;
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+
+        gainNode.gain.setValueAtTime(1.0, currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.01, currentTime + duration);
+
+        oscillator.start(currentTime);
+        oscillator.stop(currentTime + duration);
+    }
+  
+          // いいねボタンのクリック回数
+        let likeCount = 0;
+        // バッドボタンのクリック回数
+        let dislikeCount = 0;
+
+        // いいねボタンのクリック時の処理
+        document.getElementById('likeBtn').addEventListener('click', function() {
+            likeCount++;
+            document.getElementById('likeCount').textContent = likeCount;
+            // サーバーにいいねカウントを送信
+            sendCountToServer('like', likeCount);
+        });
+
+        // バッドボタンのクリック時の処理
+        document.getElementById('dislikeBtn').addEventListener('click', function() {
+            dislikeCount++;
+            document.getElementById('dislikeCount').textContent = dislikeCount;
+            // サーバーにバッドカウントを送信
+            sendCountToServer('dislike', dislikeCount);
+        });
+
+        // サーバーにカウントを送信する関数
+        function sendCountToServer(type, count) {
+            // サーバーのエンドポイントにPOSTリクエストを送信
+            fetch('/update-count', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    type: type,
+                    count: count
+                })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('サーバーエラー');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data.message);
+            })
+            .catch(error => {
+                console.error(error.message);
+            });
+        }
+
+  
+</script>
+
+
+
+
+            <script>// Write JavaScript here</script>
+        
+    
+</div></div></div></body>
